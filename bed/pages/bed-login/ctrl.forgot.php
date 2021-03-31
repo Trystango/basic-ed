@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
             $mail->Body    = 'code:' . $code;
             $mail->send();
 
-            if ($mail->send()) {
+            if ($mail->send) {
                 $_SESSION['email'] = $email;
                 $_SESSION['error-email'] = true;
                 $mail->smtpClose();
