@@ -1,16 +1,10 @@
-<?php
-require '../../includes/conn.php';
-session_start();
-ob_start()
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SFAC | Forgot Password</title>
+    <title>SFAC | Code Verification</title>
     <link rel="icon" href="../../../assets/img/logo.png" type="image/gif" sizes="16x16">
 
     <!-- Google Font: Source Sans Pro -->
@@ -44,23 +38,24 @@ ob_start()
 <div class="login-box">
     <div class="card card-outline card-danger">
         <div class="card-header text-center">
-            <p class="h3"> <b>Password Recovery</b></p>
+            <p class="h3"> <b>Verification Code</b></p>
         </div>
         <div class="card-body">
-            <p class="login-box-msg">Please enter your email address to recover your password.</p>
-            <form action="ctrl.forgot.php" method="post">
+            <p class="login-box-msg">A verification code has been sent to your email address:
+                <?php ?>
+            </p>
+            <form action="recover-password.html" method="post">
                 <div class="input-group mb-3">
-                    <input type="email" class="form-control" name="email" placeholder="Email">
+                    <input type="email" class="form-control" placeholder="Verification Code">
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-envelope"></span>
+                            <span class="fas fa-user-lock"></span>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <button type="submit" name="submit" class="btn btn-danger btn-block">Request new
-                            password</button>
+                        <button type="submit" class="btn btn-danger btn-block">Submit</button>
                     </div>
                     <!-- /.col -->
                 </div>

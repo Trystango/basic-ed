@@ -1,5 +1,5 @@
 <?php
-include '../../includes/conn.php';
+require '../../includes/conn.php';
 ob_start();
 session_start();
 
@@ -38,21 +38,21 @@ session_start();
 
     <!-- Custom css -->
     <style>
-        .background {
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position-x: right;
-            background-position-y: bottom;
+    .background {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: right;
+        background-position-y: bottom;
 
-        }
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-        .toast-top-right {
-            right: unset;
-        }
+    .toast-top-right {
+        right: unset;
+    }
     </style>
 </head>
 
@@ -79,7 +79,7 @@ session_start();
                 <div class="card-body">
                     <p class="login-box-msg">Saint Francis of Assisi College Bacoor Campus</p>
 
-                    <form action="login.start.php" method="POST">
+                    <form action="login.ctrl.php" method="POST">
                         <div class="input-group mb-3 form-control-border">
                             <input type="text" class="form-control" name="username" placeholder="Username">
                             <div class="input-group-append">

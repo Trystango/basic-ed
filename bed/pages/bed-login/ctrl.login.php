@@ -1,5 +1,5 @@
 <?php
-include '../../includes/conn.php';
+require '../../includes/conn.php';
 ob_start();
 session_start();
 
@@ -22,14 +22,14 @@ if (isset($_POST['submit'])) {
         while ($row = mysqli_fetch_array($master_key)) {
             $checkPWDhash = password_verify($password, $row['password']);
             if ($checkPWDhash == false) {
-                $_SESSION['pwd-error'] = "true";
+                $_SESSION['pwd-error'] = true;
                 header("location: login.php");
             } elseif ($checkPWDhash == true) {
                 header("Location: ../../index.php");
             }
         }
     } else {
-        $_SESSION['no-input'] = "true";
+        $_SESSION['no-input'] = true;
         header("location: login.php");
     }
 }
