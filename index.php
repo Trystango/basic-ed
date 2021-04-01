@@ -339,7 +339,7 @@ session_start();
                 </div>
             </div>
         </div>
-        <div class="background" style="background-image:url(assets/img/background/bgn-3.jpg)"></div>
+        <div class="background" style="background-image:url(assets/img/background/bgn-9.png)"></div>
     </section>
 
     <!-- Popup Video -->

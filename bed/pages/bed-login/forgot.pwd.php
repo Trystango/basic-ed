@@ -22,6 +22,17 @@ ob_start()
     <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- Toastr -->
+    <script src="../../plugins/toastr/toastr.min.js"></script>
 
     <!-- Custom css -->
     <style>
@@ -34,6 +45,11 @@ ob_start()
         background-size: cover;
         background-position-x: right;
         background-position-y: bottom;
+    }
+
+    .toast-top-right {
+        right: unset;
+        margin-top: 3%;
     }
     </style>
 </head>
@@ -48,7 +64,7 @@ ob_start()
         </div>
         <div class="card-body">
             <p class="login-box-msg">Please enter your email address to recover your password.</p>
-            <form action="ctrl.forgot.php" method="post">
+            <form action="controllerLogin/ctrl.forgot.php" method="post">
                 <div class="input-group mb-3">
                     <input type="email" class="form-control" name="email" placeholder="Email">
                     <div class="input-group-append">
@@ -74,12 +90,25 @@ ob_start()
 </div>
 <!-- /.login-box -->
 
-<!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+<!--modal toastr -->
+<?php
+if (isset($_SESSION['error'])) {
+    echo "<script>
+            $(function () {
+                toastr.error('Something went wrong.')
+            });
+        </script>";
+} elseif (isset($_SESSION['error_email'])) {
+    echo "<script>
+            $(function () {
+                toastr.error('The email address you entered does not exist.')
+            });
+        </script>";
+}
+session_destroy();
+?>
+</script>
+
 </body>
 
 </html>

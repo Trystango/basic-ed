@@ -52,6 +52,7 @@ session_start();
 
     .toast-top-right {
         right: unset;
+        margin-top: 1%;
     }
     </style>
 </head>
@@ -79,7 +80,7 @@ session_start();
                 <div class="card-body">
                     <p class="login-box-msg">Saint Francis of Assisi College Bacoor Campus</p>
 
-                    <form action="login.ctrl.php" method="POST">
+                    <form action="controllerLogin/ctrl.login.php" method="POST">
                         <div class="input-group mb-3 form-control-border">
                             <input type="text" class="form-control" name="username" placeholder="Username">
                             <div class="input-group-append">
