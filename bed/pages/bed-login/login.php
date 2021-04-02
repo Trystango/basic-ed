@@ -42,7 +42,9 @@ session_start();
         background-repeat: no-repeat;
         background-size: cover;
         background-position-x: right;
-        background-position-y: bottom;
+        background-position: bottom;
+
+
 
     }
 
@@ -58,7 +60,7 @@ session_start();
 </head>
 
 <body class="hold-transition login-page background"
-    style="background-image: url('../../../assets/img/background/bg-4.jpg')" ;>
+    style="background-image: url('../../../assets/img/background/bg-4.jpg');">
 
     <!-- Preloader -->
     <?php

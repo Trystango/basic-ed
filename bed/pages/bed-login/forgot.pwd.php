@@ -55,7 +55,7 @@ ob_start()
 </head>
 
 <body class="hold-transition login-page background"
-    style="background-image: url('../../../assets/img/background/bgn-8.jpg')" ;>
+    style="background-image: url('../../../assets/img/background/bgn-2.jpg')" ;>
 </body>
 <div class="login-box">
     <div class="card card-outline card-danger">
