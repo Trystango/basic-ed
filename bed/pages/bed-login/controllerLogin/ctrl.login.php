@@ -25,6 +25,8 @@ if (isset($_POST['submit'])) {
                 $_SESSION['pwd-error'] = true;
                 header("location: ../login.php");
             } elseif ($checkPWDhash == true) {
+                $_SESSION['name'] = $row['name'];
+                $_SESSION['mk_id'] = $row['mk_id'];
                 header("Location: ../../../index.php");
             }
         }

@@ -25,4 +25,11 @@
     <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+    <style>
+    .dropdown-item.active,
+    .dropdown-item:active {
+        background-color: #dc3545 !important;
+
+    }
+    </style>
 </head>
