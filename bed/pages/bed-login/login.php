@@ -44,12 +44,10 @@ session_start();
         background-position-x: right;
         background-position: bottom;
 
-
-
     }
 
     body {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     }
 
     .toast-top-right {
@@ -64,7 +62,7 @@ session_start();
 
     <!-- Preloader -->
     <?php
-    if (isset($_POST['btn-one'])) {
+    if (isset($_POST['pre-loader'])) {
         echo ' <div class="preloader flex-column justify-content-center align-items-center">
         <img class="animation__wobble" src="../../../assets/img/logo.png" alt="logo-preloader" height="100" width="100">
     </div>';

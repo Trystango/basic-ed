@@ -18,6 +18,9 @@ if (isset($_POST['submit'])) {
     } else {
         $hashpwd = password_hash($password, PASSWORD_BCRYPT);
         $setPWD = mysqli_query($conn, "UPDATE tbl_master_key SET password = '$hashpwd' WHERE email = '$email'");
-        header("location: ../../../index.php");
+        $_SESSION['pre-loader'] = true;
+        $_SESSION['role'] = "Master Key";
+        $_SESSION['mk_id'] = $row['mk_id'];
+        header("location: ../../bed-dashboard/index.php");
     }
 }

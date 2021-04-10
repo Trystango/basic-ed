@@ -327,13 +327,13 @@ session_start();
                 placeholder="Confirm the password" val="" />
             </form> -->
                         <form method="POST" action="bed/pages/bed-login/login.php">
-                            <button type="submit" class="button red gradient ae-7 fromCenter" name="btn-one">Sign
+                            <button type="submit" class="button red gradient ae-7 fromCenter" name="pre-loader">Sign
                                 in
                             </button>
                             <button type="submit" class="button blueGray gradient ae-7 fromCenter" name="button">Create
                                 an
                                 account</button>
-                            <form>
+                        </form>
                     </div>
 
                 </div>

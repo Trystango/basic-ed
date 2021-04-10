@@ -25,9 +25,10 @@ if (isset($_POST['submit'])) {
                 $_SESSION['pwd-error'] = true;
                 header("location: ../login.php");
             } elseif ($checkPWDhash == true) {
-                $_SESSION['name'] = $row['name'];
+                $_SESSION['pre-loader'] = true;
+                $_SESSION['role'] = "Master Key";
                 $_SESSION['mk_id'] = $row['mk_id'];
-                header("Location: ../../../index.php");
+                header("Location: ../../../pages/bed-dashboard/index.php");
             }
         }
     } else {
