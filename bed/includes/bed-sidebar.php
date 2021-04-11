@@ -64,6 +64,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="../bed-master_key/list.principal.php" class="nav-link">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>
+                            Principals List
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="../bed-master_key/list.adviser.php" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
                         <p>
@@ -76,6 +84,14 @@
                         <i class="nav-icon fas fa-user-plus"></i>
                         <p>
                             Add Registrar
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../bed-master_key/add.principal.php" class="nav-link">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            Add Principal
                         </p>
                     </a>
                 </li>
