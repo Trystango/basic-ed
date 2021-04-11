@@ -113,7 +113,7 @@ require '../../includes/bed-session.php';
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary"
                                                                             data-dismiss="modal">Close</button>
-                                                                        <a href="userData/ctrl.delReg.php<?php echo '?ad_id=' . $id; ?>"
+                                                                        <a href="userData/ctrl.delAdviser.php<?php echo '?ad_id=' . $id; ?>"
                                                                             type="button"
                                                                             class="btn btn-danger">Delete</a>
                                                                     </div>
