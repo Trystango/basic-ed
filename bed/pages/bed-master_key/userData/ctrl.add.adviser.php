@@ -16,11 +16,11 @@ if (isset($_POST['submit'])) {
 
     if ($password != $password2) {
         $_SESSION['error-pass'] = true;
-        header('location: ../add.registrar.php');
+        header('location: ../add.adviser.php');
     } else {
         $hashpwd = password_hash($password, PASSWORD_BCRYPT);
-        $insertUser = mysqli_query($conn, "INSERT INTO tbl_registrars (img, reg_fname, reg_lname, reg_mname, position, activation_code, email, username, password) VALUES ('$image', '$firstname', '$lastname', '$midname', '', '', '$email', '$username', '$hashpwd')");
+        $insertUser = mysqli_query($conn, "INSERT INTO tbl_adviser (img, ad_fname, ad_lname, ad_mname, activation_code, email, username, password) VALUES ('$image', '$firstname', '$lastname', '$midname', '', '$email', '$username', '$hashpwd')");
         $_SESSION['success'] = true;
-        header('location: ../add.registrar.php');
+        header('location: ../add.adviser.php');
     }
 }
