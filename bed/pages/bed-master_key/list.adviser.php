@@ -67,7 +67,7 @@ require '../../includes/bed-session.php';
                                                 FROM tbl_adviser") ?>
                                                 <tr>
                                                     <?php while ($row = mysqli_fetch_array($get_user)) {
-                                                        $id = $row['adviser_id']; ?>
+                                                        $id = $row['ad_id']; ?>
                                                     <td><img src="data:image/jpeg;base64, <?php echo base64_encode($row['img']);  ?>"
                                                             class="img zoom " alt="User image"
                                                             style="height: 80px; width: 100px">
@@ -75,7 +75,7 @@ require '../../includes/bed-session.php';
                                                     <td><?php echo $row['fullname']; ?></td>
                                                     <td><?php echo $row['email']; ?></td>
                                                     <td><?php echo $row['username']; ?></td>
-                                                    <td><a href="edit.adviser.php<?php echo '?adviser_id=' . $id; ?>"
+                                                    <td><a href="edit.adviser.php<?php echo '?ad_id=' . $id; ?>"
                                                             type="button"
                                                             class="btn bg-lightblue text-sm p-2 mb-md-2"><i
                                                                 class="fa fa-edit"></i>
@@ -113,7 +113,7 @@ require '../../includes/bed-session.php';
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary"
                                                                             data-dismiss="modal">Close</button>
-                                                                        <a href="userData/ctrl.delReg.php<?php echo '?reg_id=' . $id; ?>"
+                                                                        <a href="userData/ctrl.delReg.php<?php echo '?ad_id=' . $id; ?>"
                                                                             type="button"
                                                                             class="btn btn-danger">Delete</a>
                                                                     </div>
