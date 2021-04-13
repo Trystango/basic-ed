@@ -228,7 +228,7 @@ title: 'Successfully Updated.'
             </script>";
             }
             unset($_SESSION['no-pwd']);
-            unset($_SESSION['success-regEdit']);
+            unset($_SESSION['success-prinEdit']);
             unset($_SESSION['no-img']);  ?>
 
 </body>
