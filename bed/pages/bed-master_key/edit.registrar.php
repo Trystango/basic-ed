@@ -65,8 +65,8 @@ $_SESSION['get-regID'] = $reg_id;
                                         <label for="exampleInputFile"></label>
 
                                         <div class="custom-file">
-                                            <div class="text-center">
-                                                <img class="img-fluid img-bordered img-circle p-1 m-1"
+                                            <div class="img text-center">
+                                                <img class="img-bordered img-circle p-1 m-1"
                                                     src="data:image/jpeg;base64, <?php echo base64_encode($row['img']); ?> "
                                                     alt="User profile picture" style="width: 145px; height: 145px;">
                                             </div>

@@ -3,6 +3,15 @@ require '../../includes/conn.php';
 session_start();
 ob_start();
 
+$confirm_mk = $_SESSION['email_mk'];
+if ($confirm_mk == false) {
+    header('location: forgot.pwd.php');
+}
+$confirm_reg = $_SESSION['email_reg'];
+if ($confirm_reg == false) {
+    header('location: forgot.pwd.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +19,7 @@ ob_start();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SFAC | Forgot Password</title>
+    <title>SFAC | User Accounts Verification</title>
     <link rel="icon" href="../../../assets/img/logo.png" type="image/gif" sizes="16x16">
 
     <!-- Google Font: Source Sans Pro -->
@@ -60,10 +69,10 @@ ob_start();
 <div class="login-box">
     <div class="card card-outline card-danger">
         <div class="card-header text-center">
-            <p class="h3"> <b>Password Recovery</b></p>
+            <p class="h3"> <b>Identify Your Account</b></p>
         </div>
         <div class="card-body">
-            <p class="login-box-msg">Please enter your email address to recover your password.</p>
+            <p class="login-box-msg">These accounts matched to your email.</p>
             <form action="controllerLogin/ctrl.forgot.php" method="post">
                 <div class="input-group mb-3">
                     <input type="email" class="form-control" name="email" placeholder="Email">
