@@ -17,6 +17,9 @@ if (isset($_POST['submit'])) {
     $registrar = mysqli_query($conn, "SELECT * FROM tbl_registrars WHERE username = '$username'");
     $numrow_reg = mysqli_num_rows($registrar);
 
+    $principal = mysqli_query($conn, "SELECT * FROM tbl_principals WHERE username = '$username'");
+    $numrow_prin = mysqli_num_rows($principal);
+
 
 
 
@@ -46,6 +49,19 @@ if (isset($_POST['submit'])) {
                 $_SESSION['pre-loader'] = true;
                 $_SESSION['role'] = "Registrar";
                 $_SESSION['reg_id'] = $row['reg_id'];
+                header('location: ../../../pages/bed-dashboard/index.php');
+            }
+        }
+    } elseif ($numrow_prin > 0) {
+        while ($row = mysqli_fetch_array($principal)) {
+            $checkPWDhash = password_verify($password, $row['password']);
+            if ($checkPWDhash == false) {
+                $_SESSION['pwd-error'] = true;
+                header('location: ../login.php');
+            } elseif ($checkPWDhash == true) {
+                $_SESSION['pre-loader'] = true;
+                $_SESSION['role'] = "Principal";
+                $_SESSION['prin_id'] = $row['prin_id'];
                 header('location: ../../../pages/bed-dashboard/index.php');
             }
         }

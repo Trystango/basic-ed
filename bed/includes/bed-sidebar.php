@@ -29,6 +29,14 @@
                     <div class="info">
                      <a href="#" class="d-block">' . $row['fullname'];
                     }
+                } elseif ($_SESSION['role'] == "Principal") {
+                    $get_user = mysqli_query($conn, "SELECT *, CONCAT(tbl_principals.prin_lname, ', ', tbl_principals.prin_fname, ' ', tbl_principals.prin_mname) AS fullname FROM tbl_principals WHERE prin_id = '$prin_id'");
+                    while ($row = mysqli_fetch_array($get_user)) {
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 38px; height: 38px;">
+                        </div>
+                    <div class="info">
+                     <a href="#" class="d-block">' . $row['fullname'];
+                    }
                 } ?>
 
 
@@ -112,6 +120,15 @@
                     </a>
                 </li>';
                 } elseif ($_SESSION['role'] == "Registrar") {
+                    echo '<li class="nav-item menu-open">
+                    <a href="../bed-dashboard/index.php" id="loadfile" class="nav-link active">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>';
+                } elseif ($_SESSION['role'] == "Principal") {
                     echo '<li class="nav-item menu-open">
                     <a href="../bed-dashboard/index.php" id="loadfile" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>

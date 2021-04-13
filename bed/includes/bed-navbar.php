@@ -15,7 +15,12 @@
                             echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-0 mb-3" alt="User Image" style="width: 35px; height: 35px;">';
                         }
                     }
-                    ?>
+                    elseif ($_SESSION['role'] == "Principal") {
+                        $get_user = mysqli_query($conn, "SELECT * FROM tbl_principals WHERE prin_id = '$prin_id'");
+                        while ($row = mysqli_fetch_array($get_user)) {
+                            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-0 mb-3" alt="User Image" style="width: 35px; height: 35px;">';
+                        }
+                    } ?>
 
                 </div>
             </div>

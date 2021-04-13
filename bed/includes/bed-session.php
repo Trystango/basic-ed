@@ -11,6 +11,11 @@ if (!empty($_SESSION['role'])) {
         if ($reg_id == false) {
             header("location: ../bed-login/login.php");
         }
+    } elseif ($_SESSION['role'] == "Principal") {
+        $prin_id = $_SESSION['prin_id'];
+        if ($prin_id == false) {
+            header("location: ../bed-login/login.php");
+        }
     } else {
         header("location: ../bed-login/login.php");
     }

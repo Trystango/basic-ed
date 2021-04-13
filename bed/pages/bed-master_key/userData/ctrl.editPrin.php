@@ -36,7 +36,7 @@ if (isset($_POST['upload'])) {
             $hashpwd = password_hash($password, PASSWORD_BCRYPT);
             $insertUser = mysqli_query($conn, "UPDATE tbl_principals SET prin_fname = '$firstname', prin_lname = '$lastname', prin_mname = '$midname', email = '$email', username = '$username', password = '$hashpwd' WHERE prin_id = '$prin_id'");
             $_SESSION['success-prinEdit'] = true;
-            header('location: ../edit.principal.php?prin_id=' . $reg_id);
+            header('location: ../edit.principal.php?prin_id=' . $prin_id);
         }
     }
 }
