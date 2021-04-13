@@ -20,6 +20,9 @@ if (isset($_POST['submit'])) {
     $principal = mysqli_query($conn, "SELECT * FROM tbl_principals WHERE username = '$username'");
     $numrow_prin = mysqli_num_rows($principal);
 
+     $admission = mysqli_query($conn, "SELECT * FROM tbl_admissions WHERE username = '$username'");
+    $numrow_admission = mysqli_num_rows($admission);
+
 
 
 
@@ -62,6 +65,19 @@ if (isset($_POST['submit'])) {
                 $_SESSION['pre-loader'] = true;
                 $_SESSION['role'] = "Principal";
                 $_SESSION['prin_id'] = $row['prin_id'];
+                header('location: ../../../pages/bed-dashboard/index.php');
+            }
+        }
+    } elseif ($numrow_admission > 0) {
+        while ($row = mysqli_fetch_array($admission)) {
+            $checkPWDhash = password_verify($password, $row['password']);
+            if ($checkPWDhash == false) {
+                $_SESSION['pwd-error'] = true;
+                header('location: ../login.php');
+            } elseif ($checkPWDhash == true) {
+                $_SESSION['pre-loader'] = true;
+                $_SESSION['role'] = "Admission";
+                $_SESSION['admission_id'] = $row['admission_id'];
                 header('location: ../../../pages/bed-dashboard/index.php');
             }
         }
