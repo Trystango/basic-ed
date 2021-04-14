@@ -16,7 +16,7 @@ $_SESSION['get-adID'] = $ad_id;
 <!-- Head and links -->
 
 <head>
-    <title>SFAC | Update Adviser </title>
+    <title>SFAC | Update Principal </title>
     <?php include '../../includes/bed-head.php'; ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -30,7 +30,7 @@ $_SESSION['get-adID'] = $ad_id;
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link disabled text-light">Update Adviser</a>
+                    <a href="#" class="nav-link disabled text-light">Update Principal</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link disabled text-light">Basic Education</a>
@@ -50,7 +50,7 @@ $_SESSION['get-adID'] = $ad_id;
                     <div class="container-fluid pl-5 pr-5 pb-3">
                         <div class="card card-purple shadow-lg">
                             <div class="card-header">
-                                <h3 class="card-title">Adviser Update Form</h3>
+                                <h3 class="card-title">Principal Update Form</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
@@ -228,7 +228,7 @@ title: 'Successfully Updated.'
             </script>";
             }
             unset($_SESSION['no-pwd']);
-            unset($_SESSION['success-regEdit']);
+            unset($_SESSION['success-adEdit']);
             unset($_SESSION['no-img']);  ?>
 
 </body>
