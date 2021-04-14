@@ -21,6 +21,11 @@ if (!empty($_SESSION['role'])) {
         if ($admission_id == false) {
             header("location: ../bed-login/login.php");
         }
+    } elseif ($_SESSION['role'] == "Teacher") {
+        $teacher_id = $_SESSION['teacher_id'];
+        if ($teacher_id == false) {
+            header("location: ../bed-login/login.php");
+        }
     } else {
         header("location: ../bed-login/login.php");
     }
