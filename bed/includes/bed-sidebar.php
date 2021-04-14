@@ -45,6 +45,14 @@
                     <div class="info">
                      <a href="#" class="d-block">' . $row['fullname'];
                     }
+                } elseif ($_SESSION['role'] == "Teacher") {
+                    $get_user = mysqli_query($conn, "SELECT *, CONCAT(tbl_teachers.teacher_lname, ', ', tbl_teachers.teacher_fname, ' ', tbl_teachers.teacher_mname) AS fullname FROM tbl_teachers WHERE teacher_id = '$teacher_id'");
+                    while ($row = mysqli_fetch_array($get_user)) {
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 38px; height: 38px;">
+                        </div>
+                    <div class="info">
+                     <a href="#" class="d-block">' . $row['fullname'];
+                    }
                 }?>
             
 
@@ -112,6 +120,14 @@
                         </p>
                     </a>
                 </li>
+                 <li class="nav-item">
+                    <a href="../bed-master_key/list.teacher.php" class="nav-link">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>
+                            Teachers List
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="../bed-master_key/add.registrar.php" class="nav-link">
                         <i class="nav-icon fas fa-user-plus"></i>
@@ -143,6 +159,14 @@
                             Add Admission
                         </p>
                     </a>
+                </li>
+                 <li class="nav-item">
+                    <a href="../bed-master_key/add.teacher.php" class="nav-link">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            Add Teacher
+                        </p>
+                    </a>
                 </li>';
                 } elseif ($_SESSION['role'] == "Registrar") {
                     echo '<li class="nav-item menu-open">
@@ -163,6 +187,15 @@
                     </a>
                 </li>';
                  } elseif ($_SESSION['role'] == "Admission") {
+                    echo '<li class="nav-item menu-open">
+                    <a href="../bed-dashboard/index.php" id="loadfile" class="nav-link active">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>';
+                 } elseif ($_SESSION['role'] == "Teacher") {
                     echo '<li class="nav-item menu-open">
                     <a href="../bed-dashboard/index.php" id="loadfile" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
