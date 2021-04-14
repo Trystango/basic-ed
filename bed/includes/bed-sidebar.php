@@ -53,6 +53,14 @@
                     <div class="info">
                      <a href="#" class="d-block">' . $row['fullname'];
                     }
+                } elseif ($_SESSION['role'] == "Adviser") {
+                    $get_user = mysqli_query($conn, "SELECT *, CONCAT(tbl_adviser.ad_lname, ', ', tbl_adviser.ad_fname, ' ', tbl_adviser.ad_mname) AS fullname FROM tbl_adviser WHERE ad_id = '$ad_id'");
+                    while ($row = mysqli_fetch_array($get_user)) {
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 38px; height: 38px;">
+                        </div>
+                    <div class="info">
+                    <a href="#" class="d-block">' . $row['fullname'];
+                    }
                 }?>
             
 
@@ -196,6 +204,15 @@
                     </a>
                 </li>';
                  } elseif ($_SESSION['role'] == "Teacher") {
+                    echo '<li class="nav-item menu-open">
+                    <a href="../bed-dashboard/index.php" id="loadfile" class="nav-link active">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>';
+                } elseif ($_SESSION['role'] == "Adviser") {
                     echo '<li class="nav-item menu-open">
                     <a href="../bed-dashboard/index.php" id="loadfile" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
