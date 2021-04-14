@@ -8,7 +8,7 @@ if (isset($_POST['upload'])) {
 
     if (empty($_FILES['image']['tmp_name'])) {
         $_SESSION['no-img'] = true;
-        header('location: ../edit.adviser.php?reg_id=' . $ad_id);
+        header('location: ../edit.adviser.php?ad_id=' . $ad_id);
     } else {
         $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
         $set_userInfo = mysqli_query($conn, "UPDATE tbl_adviser SET img = '$image' WHERE ad_id = '$ad_id'");
@@ -36,7 +36,7 @@ if (isset($_POST['upload'])) {
             $hashpwd = password_hash($password, PASSWORD_BCRYPT);
             $insertUser = mysqli_query($conn, "UPDATE tbl_adviser SET ad_fname = '$firstname', ad_lname = '$lastname', ad_mname = '$midname', email = '$email', username = '$username', password = '$hashpwd' WHERE ad_id = '$ad_id'");
             $_SESSION['success-adEdit'] = true;
-            header('location: ../edit.adviser.php?ad_id=' . $reg_id);
+            header('location: ../edit.adviser.php?ad_id=' . $ad_id);
         }
     }
 }
