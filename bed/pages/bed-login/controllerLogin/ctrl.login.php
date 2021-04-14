@@ -20,14 +20,13 @@ if (isset($_POST['submit'])) {
     $principal = mysqli_query($conn, "SELECT * FROM tbl_principals WHERE username = '$username'");
     $numrow_prin = mysqli_num_rows($principal);
 
-     $admission = mysqli_query($conn, "SELECT * FROM tbl_admissions WHERE username = '$username'");
-    $numrow_admission = mysqli_num_rows($admission);
+    $admission = mysqli_query($conn, "SELECT * FROM tbl_admissions WHERE username = '$username'");
 
-     $teacher = mysqli_query($conn, "SELECT * FROM tbl_teachers WHERE username = '$username'");
+    $teacher = mysqli_query($conn, "SELECT * FROM tbl_teachers WHERE username = '$username'");
     $numrow_teacher = mysqli_num_rows($teacher);
 
-    $Adviser = mysqli_query($conn, "SELECT * FROM tbl_adviser WHERE username = '$username'");
-    $numrow_adviser = mysqli_num_rows($Adviser);
+    $adviser = mysqli_query($conn, "SELECT * FROM tbl_adviser WHERE username = '$username'");
+    $numrow_adviser = mysqli_num_rows($adviser);
 
 
 
@@ -114,8 +113,7 @@ if (isset($_POST['submit'])) {
                 header('location: ../../../pages/bed-dashboard/index.php');
             }
         }
-    } 
-      else {
+    } else {
         $_SESSION['no-input'] = true;
         header("location: ../login.php");
     }
