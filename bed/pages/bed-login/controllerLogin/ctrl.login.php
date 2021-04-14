@@ -26,6 +26,9 @@ if (isset($_POST['submit'])) {
      $teacher = mysqli_query($conn, "SELECT * FROM tbl_teachers WHERE username = '$username'");
     $numrow_teacher = mysqli_num_rows($teacher);
 
+    $Adviser = mysqli_query($conn, "SELECT * FROM tbl_adviser WHERE username = '$username'");
+    $numrow_adviser = mysqli_num_rows($Adviser);
+
 
 
 
@@ -98,7 +101,21 @@ if (isset($_POST['submit'])) {
                 header('location: ../../../pages/bed-dashboard/index.php');
             }
         }
-    } else {
+    } elseif ($numrow_Adviser > 0) {
+        while ($row = mysqli_fetch_array($Adviser)) {
+            $checkPWDhash = password_verify($password, $row['password']);
+            if ($checkPWDhash == false) {
+                $_SESSION['pwd-error'] = true;
+                header('location: ../login.php');
+            } elseif ($checkPWDhash == true) {
+                $_SESSION['pre-loader'] = true;
+                $_SESSION['role'] = "Adviser";
+                $_SESSION['ad_id'] = $row['ad_id'];
+                header('location: ../../../pages/bed-dashboard/index.php');
+            }
+        }
+    } 
+      else {
         $_SESSION['no-input'] = true;
         header("location: ../login.php");
     }
