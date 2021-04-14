@@ -26,7 +26,8 @@ if (isset($_POST['submit'])) {
      $teacher = mysqli_query($conn, "SELECT * FROM tbl_teachers WHERE username = '$username'");
     $numrow_teacher = mysqli_num_rows($teacher);
 
-    
+    $Adviser = mysqli_query($conn, "SELECT * FROM tbl_adviser WHERE username = '$username'");
+    $numrow_adviser = mysqli_num_rows($Adviser);
 
 
 
