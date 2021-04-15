@@ -248,13 +248,13 @@
            </a>
          </li>
            <li class="nav-item">
-             <a href="#p" class="nav-link">
+            <a href="../bed-hedCurr/stem.php" class="nav-link">
                <i class="fa fa-file-alt"> </i>
                <p> STEM</p>
              </a>
            </li>
            <li class="nav-item">
-             <a href="../bed-hedCurr/stem.php" class="nav-link">
+                <a href="#" class="nav-link">
                <i class="fa fa-file-alt"> </i>
                <p> TVL</p>
              </a>
@@ -302,7 +302,48 @@
                             Dashboard
                         </p>
                     </a>
-                </li>';
+                </li>
+                <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-binoculars"></i>
+                    <p>
+                        View Subjects
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="../bed-hedCurr/abm.php" class="nav-link">
+                        <i class="fa fa-file-alt"> </i>
+                        <p> ABM</p>
+                    </a>
+                </li> 
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa fa-file-alt"> </i>
+                            <p> GAS</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa fa-file-alt"> </i>
+                            <p> HUMSS</p>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                 <a href="../bed-hedCurr/stem.php" class="nav-link">
+                        <i class="fa fa-file-alt"> </i>
+                            <p> STEM</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                <a href="#p" class="nav-link">
+                        <i class="fa fa-file-alt"> </i>
+                            <p> TVL</p>
+                    </a>
+                </li>
+                </ul>
+                </li>';              
                 }
                 ?>
                 <!--  End Master Key  -->
