@@ -2,18 +2,18 @@
 require '../../../includes/conn.php';
 session_start();
 
-$teacher_id = $_SESSION['get-teacherID'];
+$acc_id = $_SESSION['get-accID'];
 
 if (isset($_POST['upload'])) {
 
     if (empty($_FILES['image']['tmp_name'])) {
         $_SESSION['no-img'] = true;
-        header('location: ../edit.teacher.php?teacher_id=' . $teacher_id);
+        header('location: ../edit.accounting.php?acc_id=' . $acc_id);
     } else {
         $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-        $set_userInfo = mysqli_query($conn, "UPDATE tbl_teachers SET img = '$image' WHERE teacher_id = '$teacher_id'");
-        $_SESSION['success-teacherEdit'] = true;
-        header('location: ../edit.teacher.php?teacher_id=' . $teacher_id);
+        $set_userInfo = mysqli_query($conn, "UPDATE tbl_accountings SET img = '$image' WHERE acc_id = '$acc_id'");
+        $_SESSION['success-accEdit'] = true;
+        header('location: ../edit.accounting.php?acc_id=' . $acc_id);
     }
 } elseif (isset($_POST['submit'])) {
 
@@ -27,16 +27,16 @@ if (isset($_POST['upload'])) {
 
     if (empty($password) && empty($password2)) {
         $_SESSION['no-pwd'] = true;
-        header('location: ../edit.teacher.php?teacher_id=' . $teacher_id);
+        header('location: ../edit.accounting.php?acc_id=' . $acc_id);
     } else {
         if ($password != $password2) {
             $_SESSION['error-pass'] = true;
-            header('location: ../edit.teacher.php?teacher_id=' . $teacher_id);
+            header('location: ../edit.accounting.php?acc_id=' . $acc_id);
         } else {
             $hashpwd = password_hash($password, PASSWORD_BCRYPT);
-            $insertUser = mysqli_query($conn, "UPDATE tbl_teachers SET teacher_fname = '$firstname', teacher_lname = '$lastname', teacher_mname = '$midname', email = '$email', username = '$username', password = '$hashpwd' WHERE teacher_id = '$teacher_id'");
-            $_SESSION['success-teacherEdit'] = true;
-            header('location: ../edit.teacher.php?teacher_id=' . $teacher_id);
+            $insertUser = mysqli_query($conn, "UPDATE tbl_accountings SET accounting_fname = '$firstname', accounting_lname = '$lastname', accounting_mname = '$midname', email = '$email', username = '$username', password = '$hashpwd' WHERE acc_id = '$acc_id'");
+            $_SESSION['success-accEdit'] = true;
+            header('location: ../edit.accounting.php?acc_id=' . $acc_id);
         }
     }
 }

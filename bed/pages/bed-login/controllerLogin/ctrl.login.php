@@ -20,7 +20,11 @@ if (isset($_POST['submit'])) {
     $principal = mysqli_query($conn, "SELECT * FROM tbl_principals WHERE username = '$username'");
     $numrow_prin = mysqli_num_rows($principal);
 
+    $accounting = mysqli_query($conn, "SELECT * FROM tbl_accountings WHERE username = '$username'");
+    $numrow_acc = mysqli_num_rows($accounting);
+
     $admission = mysqli_query($conn, "SELECT * FROM tbl_admissions WHERE username = '$username'");
+    $numrow_admission = mysqli_num_rows($admission);
 
     $teacher = mysqli_query($conn, "SELECT * FROM tbl_teachers WHERE username = '$username'");
     $numrow_teacher = mysqli_num_rows($teacher);
@@ -74,6 +78,19 @@ if (isset($_POST['submit'])) {
                 header('location: ../../../pages/bed-dashboard/index.php');
             }
         }
+    } elseif ($numrow_acc > 0) {
+        while ($row = mysqli_fetch_array($accounting)) {
+            $checkPWDhash = password_verify($password, $row['password']);
+            if ($checkPWDhash == false) {
+                $_SESSION['pwd-error'] = true;
+                header('location: ../login.php');
+            } elseif ($checkPWDhash == true) {
+                $_SESSION['pre-loader'] = true;
+                $_SESSION['role'] = "Accounting";
+                $_SESSION['acc_id'] = $row['acc_id'];
+                header('location: ../../../pages/bed-dashboard/index.php');
+            }
+        }
     } elseif ($numrow_admission > 0) {
         while ($row = mysqli_fetch_array($admission)) {
             $checkPWDhash = password_verify($password, $row['password']);
@@ -100,8 +117,8 @@ if (isset($_POST['submit'])) {
                 header('location: ../../../pages/bed-dashboard/index.php');
             }
         }
-    } elseif ($numrow_Adviser > 0) {
-        while ($row = mysqli_fetch_array($Adviser)) {
+    } elseif ($numrow_adviser > 0) {
+        while ($row = mysqli_fetch_array($adviser)) {
             $checkPWDhash = password_verify($password, $row['password']);
             if ($checkPWDhash == false) {
                 $_SESSION['pwd-error'] = true;

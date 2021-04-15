@@ -3,10 +3,8 @@ require '../../includes/conn.php';
 session_start();
 ob_start();
 
-require '../../includes/bed-session.php';
 
-$teacher_id = $_GET['teacher_id'];
-$_SESSION['get-teacherID'] = $teacher_id;
+require '../../includes/bed-session.php';
 ?>
 
 
@@ -16,7 +14,7 @@ $_SESSION['get-teacherID'] = $teacher_id;
 <!-- Head and links -->
 
 <head>
-    <title>SFAC | Update Teacher </title>
+    <title>SFAC | Accounting Sign up </title>
     <?php include '../../includes/bed-head.php'; ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -30,7 +28,7 @@ $_SESSION['get-teacherID'] = $teacher_id;
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link disabled text-light">Update Teacher</a>
+                    <a href="#" class="nav-link disabled text-light">Add Accounting</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link disabled text-light">Basic Education</a>
@@ -48,26 +46,21 @@ $_SESSION['get-teacherID'] = $teacher_id;
                 <!-- Main content -->
                 <section class="content">
                     <div class="container-fluid pl-5 pr-5 pb-3">
-                        <div class="card card-purple shadow-lg">
+                        <div class="card card-info shadow-lg">
                             <div class="card-header">
-                                <h3 class="card-title">Teacher Update Form</h3>
+                                <h3 class="card-title">Accounting Sign up Form</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <?php
-                            $get_userInfo = mysqli_query($conn, "SELECT * FROM tbl_teachers WHERE teacher_id = '$teacher_id'");
-
-                            while ($row = mysqli_fetch_array($get_userInfo)) { ?>
-                            <form action="userData/ctrl.editTeach.php<?php echo '?teacher_id=' . $teacher_id; ?>"
-                                enctype="multipart/form-data" method="POST">
+                            <form action="userData/ctrl.addAcc.php" enctype="multipart/form-data" method="POST">
                                 <div class="card-body">
                                     <div class="form-group mb-4">
                                         <label for="exampleInputFile"></label>
 
+
                                         <div class="custom-file">
-                                            <div class="img text-center">
-                                                <img class="img-bordered img-circle p-1 m-1"
-                                                    src="data:image/jpeg;base64, <?php echo base64_encode($row['img']); ?> "
+                                            <div class="text-center">
+                                                <img class="img-fluid img-circle" src="../../../assets/img/user.png "
                                                     alt="User profile picture" style="width: 145px; height: 145px;">
                                             </div>
 
@@ -76,13 +69,11 @@ $_SESSION['get-teacherID'] = $teacher_id;
                                                 <div class="form-group mr-auto ml-auto col-md-4">
                                                     <div class="input-group">
                                                         <div class="custom-file">
-                                                            <input type="file" name="image" class="custom-file-input"
-                                                                id="customFile">
+                                                            <input type="file" name="image" required
+                                                                class="custom-file-input" id="customFile">
                                                             <label class="custom-file-label" for="customFile">Choose
                                                                 image</label>
-                                                        </div><button type="submit" name="upload"
-                                                            class="btn bg-purple"><i class="fa fa-image"></i>
-                                                            Update</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -96,7 +87,7 @@ $_SESSION['get-teacherID'] = $teacher_id;
                                                 <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
                                             </div>
                                             <input type="text" class="form-control" name="firstname"
-                                                placeholder="Firstname" value="<?php echo $row['teacher_fname']; ?>">
+                                                placeholder="First name">
                                         </div>
 
 
@@ -105,7 +96,7 @@ $_SESSION['get-teacherID'] = $teacher_id;
                                                 <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
                                             </div>
                                             <input type="text" class="form-control" name="lastname"
-                                                placeholder="Lastname" value="<?php echo $row['teacher_lname']; ?>">
+                                                placeholder="Last name">
                                         </div>
 
                                         <div class="input-group col-sm-4 mb-2">
@@ -113,7 +104,7 @@ $_SESSION['get-teacherID'] = $teacher_id;
                                                 <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
                                             </div>
                                             <input type="text" class="form-control" name="midname"
-                                                placeholder="Middlename" value="<?php echo $row['teacher_mname']; ?>">
+                                                placeholder="Middle name">
                                         </div>
                                     </div>
 
@@ -124,8 +115,7 @@ $_SESSION['get-teacherID'] = $teacher_id;
                                                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                             </div>
                                             <input type="email" class="form-control" name="email"
-                                                placeholder="Email Address" value="<?php echo $row['email']; ?>"
-                                                required>
+                                                placeholder="Email Address" required>
                                         </div>
 
                                         <div class="input-group col-sm-6 mb-2">
@@ -133,18 +123,18 @@ $_SESSION['get-teacherID'] = $teacher_id;
                                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                                             </div>
                                             <input type="text" class="form-control" name="username"
-                                                placeholder="Username" value="<?php echo $row['username']; ?>" required>
+                                                placeholder="Username" required>
                                         </div>
                                     </div>
 
-                                    <?php } ?>
+
                                     <div class="row mb-4">
                                         <div class="input-group col-sm-6 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
                                             </div>
                                             <input type="password" class="form-control" name="password"
-                                                placeholder="Password">
+                                                placeholder="Password" required>
                                         </div>
 
 
@@ -153,15 +143,15 @@ $_SESSION['get-teacherID'] = $teacher_id;
                                                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
                                             </div>
                                             <input type="password" class="form-control" name="password2"
-                                                placeholder="Confirm Password">
+                                                placeholder="Confirm Password" required>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">
-                                    <button type="submit" name="submit" class="btn bg-purple"><i
-                                            class="fa fa-user-check"></i> Update</button>
+                                    <button type="submit" name="submit" class="btn btn-info"><i
+                                            class="fa fa-user-plus"></i> Add</button>
                                 </div>
                             </form>
                         </div>
@@ -175,61 +165,9 @@ $_SESSION['get-teacherID'] = $teacher_id;
 
 
             <!-- Footer and script -->
-            <?php include '../../includes/bed-footer.php';
+            <?php include '../../includes/bed-footer.php';  ?>
 
-            // alert 
-            if (isset($_SESSION['success-teacherEdit'])) {
-                echo "<script>
-    $(function() {
-        var Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000
-        }); 
-$('.swalDefaultSuccess') 
-Toast.fire({
-icon: 'success',
-title: 'Successfully Updated.'
-})
-}); 
-</script>";
-            } elseif (isset($_SESSION['no-img'])) {
-                echo "<script>
-            $(function() {
-                var Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000
-                });
-                $('.swalDefaultError')
-                Toast.fire({
-                    icon: 'error',
-                    title:  'Upload Failed. Please try again.'
-                });
-            });
-            </script>";
-            } elseif (isset($_SESSION['no-pwd'])) {
-                echo "<script>
-            $(function() {
-                var Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000
-                });
-                $('.swalDefaultError')
-                Toast.fire({
-                    icon: 'error',
-                    title:  'The Password field is required. Please try again.'
-                });
-            });
-            </script>";
-            }
-            unset($_SESSION['no-pwd']);
-            unset($_SESSION['success-teacherEdit']);
-            unset($_SESSION['no-img']);  ?>
+
 
 </body>
 

@@ -8,7 +8,7 @@ if (isset($_POST['upload'])) {
 
     if (empty($_FILES['image']['tmp_name'])) {
         $_SESSION['no-img'] = true;
-        header('location: ../edit.principals.php?reg_id=' . $prin_id);
+        header('location: ../edit.principals.php?prin_id=' . $prin_id);
     } else {
         $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
         $set_userInfo = mysqli_query($conn, "UPDATE tbl_principals SET img = '$image' WHERE prin_id = '$prin_id'");
