@@ -16,7 +16,7 @@
                 if ($_SESSION['role'] == "Master Key") {
                     $get_user = mysqli_query($conn, "SELECT * FROM tbl_master_key WHERE mk_id = '$mk_id'");
                     while ($row = mysqli_fetch_array($get_user)) {
-                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image">
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 39px; height: 39px;">
                         </div>
                     <div class="info">
                      <a class="d-block">' . $row['name'];
@@ -24,7 +24,7 @@
                 } elseif ($_SESSION['role'] == "Registrar") {
                     $get_user = mysqli_query($conn, "SELECT *, CONCAT(tbl_registrars.reg_lname, ', ', tbl_registrars.reg_fname, ' ', LEFT(tbl_registrars.reg_mname,1), '.' ) AS fullname FROM tbl_registrars WHERE reg_id = '$reg_id'");
                     while ($row = mysqli_fetch_array($get_user)) {
-                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 38px; height: 38px;">
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 39px; height: 39px;">
                         </div>
                     <div class="info">
                      <a class="d-block">' . $row['fullname'];
@@ -32,7 +32,7 @@
                 } elseif ($_SESSION['role'] == "Principal") {
                     $get_user = mysqli_query($conn, "SELECT *, CONCAT(tbl_principals.prin_lname, ', ', tbl_principals.prin_fname, ' ', LEFT(tbl_principals.prin_mname,1), '.') AS fullname FROM tbl_principals WHERE prin_id = '$prin_id'");
                     while ($row = mysqli_fetch_array($get_user)) {
-                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 38px; height: 38px;">
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 39px; height: 39px;">
                         </div>
                     <div class="info">
                      <a class="d-block">' . $row['fullname'];
@@ -40,7 +40,7 @@
                 } elseif ($_SESSION['role'] == "Accounting") {
                     $get_user = mysqli_query($conn, "SELECT *, CONCAT(tbl_accountings.accounting_lname, ', ', tbl_accountings.accounting_fname, ' ', LEFT(tbl_accountings.accounting_mname,1), '.') AS fullname FROM tbl_accountings WHERE acc_id = '$acc_id'");
                     while ($row = mysqli_fetch_array($get_user)) {
-                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 38px; height: 38px;">
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 39px; height: 39px;">
                         </div>
                     <div class="info">
                      <a class="d-block">' . $row['fullname'];
@@ -48,7 +48,7 @@
                 } elseif ($_SESSION['role'] == "Admission") {
                     $get_user = mysqli_query($conn, "SELECT *, CONCAT(tbl_admissions.admission_lname, ', ', tbl_admissions.admission_fname, ' ', LEFT(tbl_admissions.admission_mname,1), '.') AS fullname FROM tbl_admissions WHERE admission_id = '$admission_id'");
                     while ($row = mysqli_fetch_array($get_user)) {
-                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 38px; height: 38px;">
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 39px; height: 39px;">
                         </div>
                     <div class="info">
                      <a class="d-block">' . $row['fullname'];
@@ -56,7 +56,7 @@
                 } elseif ($_SESSION['role'] == "Teacher") {
                     $get_user = mysqli_query($conn, "SELECT *, CONCAT(tbl_teachers.teacher_lname, ', ', tbl_teachers.teacher_fname, ' ', LEFT(tbl_teachers.teacher_mname,1), '.') AS fullname FROM tbl_teachers WHERE teacher_id = '$teacher_id'");
                     while ($row = mysqli_fetch_array($get_user)) {
-                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 38px; height: 38px;">
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 39px; height: 39px;">
                         </div>
                     <div class="info">
                      <a class="d-block">' . $row['fullname'];
@@ -64,10 +64,29 @@
                 } elseif ($_SESSION['role'] == "Adviser") {
                     $get_user = mysqli_query($conn, "SELECT *, CONCAT(tbl_adviser.ad_lname, ', ', tbl_adviser.ad_fname, ' ', LEFT(tbl_adviser.ad_mname,1), '.') AS fullname FROM tbl_adviser WHERE ad_id = '$ad_id'");
                     while ($row = mysqli_fetch_array($get_user)) {
-                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 38px; height: 38px;">
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 39px; height: 39px;">
                         </div>
                     <div class="info">
                     <a class="d-block">' . $row['fullname'];
+                    }
+                } elseif ($_SESSION['role'] == "Student") {
+                    $get_user = mysqli_query($conn, "SELECT *, CONCAT(tbl_students.student_lname, ', ', tbl_students.student_fname, ' ', LEFT(tbl_students.student_mname,1), '.') AS fullname FROM tbl_students WHERE student_id = '$stud_id'");
+                    while ($row = mysqli_fetch_array($get_user)) {
+                        if (empty(base64_encode($row['img']))) {
+                            echo '<img src="../../../assets/img/red_user.jpg" class="img-circle elevation-2 zoom" alt="User image" style="width: 39px; height: 39px;">
+                            </div>';
+                        } else {
+                            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-2 zoom" alt="User image" style="width: 39px; height: 39px;">
+                        </div>';
+                        }
+                        if (empty($row['student_lname'])) {
+                            echo '<div class="info">
+                            <a class="d-block">' . $row['stud_no'];
+                        } else {
+                            echo '
+                    <div class="info">
+                    <a class="d-block">' . $row['fullname'];
+                        }
                     }
                 } ?>
 
@@ -96,8 +115,8 @@
                with font-awesome or any other icon font library -->
 
                 <!-- MASTER KEY SIDEBAR -->
-
-                <?php if ($_SESSION['role'] == "Master Key") {
+                <?php
+                if ($_SESSION['role'] == "Master Key") {
                     echo '<li class="nav-item menu-open">
                     <a href="../bed-dashboard/index.php" id="loadfile" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -105,7 +124,7 @@
                             Dashboard
                         </p>
                     </a>
-                </li> 
+                </li>
                 <li class="nav-item">
                     <a href="../bed-master_key/list.principal.php" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
@@ -122,7 +141,7 @@
                         </p>
                     </a>
                 </li>
-               
+
                 <li class="nav-item">
                     <a href="../bed-master_key/list.accounting.php" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
@@ -147,7 +166,7 @@
                         </p>
                     </a>
                 </li>
-                 <li class="nav-item">
+                <li class="nav-item">
                     <a href="../bed-master_key/list.teacher.php" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
                         <p>
@@ -172,7 +191,7 @@
                         </p>
                     </a>
                 </li>
-               
+
                 <li class="nav-item">
                     <a href="../bed-master_key/add.accounting.php" class="nav-link">
                         <i class="nav-icon fas fa-user-plus"></i>
@@ -181,7 +200,7 @@
                         </p>
                     </a>
                 </li>
-               
+
                 <li class="nav-item">
                     <a href="../bed-master_key/add.admission.php" class="nav-link">
                         <i class="nav-icon fas fa-user-plus"></i>
@@ -198,7 +217,7 @@
                         </p>
                     </a>
                 </li>
-                 <li class="nav-item">
+                <li class="nav-item">
                     <a href="../bed-master_key/add.teacher.php" class="nav-link">
                         <i class="nav-icon fas fa-user-plus"></i>
                         <p>
@@ -220,47 +239,75 @@
                         </p>
                     </a>
                 </li>
+
+
                 <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-binoculars"></i>
-                    <p>
-                        View Subjects
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-             <ul class="nav nav-treeview">
-             <li class="nav-item">
-             <a href="../bed-hedCurr/abm.php" class="nav-link">
-               <i class="fa fa-file-alt"> </i>
-               <p> ABM</p>
-             </a>
-           </li> 
-           <li class="nav-item">
-           <a href="#" class="nav-link">
-             <i class="fa fa-file-alt"> </i>
-             <p> GAS</p>
-           </a>
-         </li>
-           <li class="nav-item">
-           <a href="#" class="nav-link">
-             <i class="fa fa-file-alt"> </i>
-             <p> HUMSS</p>
-           </a>
-         </li>
-           <li class="nav-item">
-            <a href="../bed-hedCurr/stem.php" class="nav-link">
-               <i class="fa fa-file-alt"> </i>
-               <p> STEM</p>
-             </a>
-           </li>
-           <li class="nav-item">
-                <a href="#" class="nav-link">
-               <i class="fa fa-file-alt"> </i>
-               <p> TVL</p>
-             </a>
-           </li>
-             </ul>
-             </li>';
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-binoculars"></i>
+                        <p>
+                            View Subjects
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="../bed-hedCurr/abm.php" class="nav-link">
+                                <i class="fa fa-file-alt"> </i>
+                                <p class="ml-1"> ABM</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../bed-hedCurr/gas.php" class="nav-link">
+                                <i class="fa fa-file-alt"> </i>
+                                <p class="ml-1"> GAS</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../bed-hedCurr/humss.php" class="nav-link">
+                                <i class="fa fa-file-alt"> </i>
+                                <p class="ml-1"> HUMSS</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../bed-hedCurr/stem.php" class="nav-link">
+                                <i class="fa fa-file-alt"> </i>
+                                <p class="ml-1"> STEM</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../bed-hedCurr/tvl.php" class="nav-link">
+                                <i class="fa fa-file-alt"> </i>
+                                <p class="ml-1"> TVL</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-hand-holding-medical"></i>
+                        <p>
+                            Registrar Services
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="../bed-globalPages/add.student.php" class="nav-link">
+                                <i class="fa fa-user-plus"></i>
+                                <p> Add Student</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../bed-globalPages/add.student.php" class="nav-link">
+                                <i class="fa fa-file-medical"></i>
+                                <p class="ml-2"> Add Subject</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                ';
                 }
 
 
@@ -268,7 +315,8 @@
 
 
                 elseif ($_SESSION['role'] == "Principal") {
-                    echo '<li class="nav-item menu-open">
+                    echo '
+                <li class="nav-item menu-open">
                     <a href="../bed-dashboard/index.php" id="loadfile" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
@@ -304,50 +352,67 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-binoculars"></i>
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-binoculars"></i>
+                        <p>
+                            View Subjects
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="../bed-hedCurr/abm.php" class="nav-link">
+                                <i class="fa fa-file-alt"> </i>
+                                <p> ABM</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-file-alt"> </i>
+                                <p> GAS</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../bed-hedCurr/humss.php" class="nav-link">
+                                <i class="fa fa-file-alt"> </i>
+                                <p> HUMSS</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../bed-hedCurr/stem.php" class="nav-link">
+                                <i class="fa fa-file-alt"> </i>
+                                <p> STEM</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../bed-hedCurr/tvl.php" class="nav-link">
+                                <i class="fa fa-file-alt"> </i>
+                                <p> TVL</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>';
+                } elseif ($_SESSION['role'] == "Student") {
+                    echo '<li class="nav-item menu-open">
+                    <a href="../bed-dashboard/index.php" id="loadfile" class="nav-link active">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                <a href="../bed-student/edit.infoStud.php" class="nav-link">
+                    <i class="nav-icon fas fa-id-card"></i>
                     <p>
-                        View Subjects
-                        <i class="right fas fa-angle-left"></i>
+                        Personal Info
                     </p>
                 </a>
-                <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="../bed-hedCurr/abm.php" class="nav-link">
-                        <i class="fa fa-file-alt"> </i>
-                        <p> ABM</p>
-                    </a>
-                </li> 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fa fa-file-alt"> </i>
-                            <p> GAS</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fa fa-file-alt"> </i>
-                            <p> HUMSS</p>
-                    </a>
-                </li>
-                 <li class="nav-item">
-                 <a href="../bed-hedCurr/stem.php" class="nav-link">
-                        <i class="fa fa-file-alt"> </i>
-                            <p> STEM</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                <a href="#p" class="nav-link">
-                        <i class="fa fa-file-alt"> </i>
-                            <p> TVL</p>
-                    </a>
-                </li>
-                </ul>
-                </li>';              
+            </li>';
                 }
-                ?>
-                <!--  End Master Key  -->
 
+                // END STUDENT
+                ?>
 
 
             </ul>
@@ -358,8 +423,21 @@
 
     <!-- sidebar custom -->
     <div class="sidebar-custom">
-        <a href="#" class="btn btn-link ml-2"><i class="fas fa-cog text-gray"></i></a>
-        <a href="#" class="btn btn-link pos-right mr-2 text-gray"><i class="fas fa-user-edit"></i></a>
+        <?php if ($_SESSION['role'] == "Master Key") {
+            echo ' <a href="#" class="btn btn-link ml-2"><i class="fas fa-cog text-gray"></i></a>
+        <a href="../bed-master_key/edit.master.php"
+        class="btn btn-link pos-right mr-2 text-gray"><i class="fas fa-user-edit"></i></a>';
+        } elseif ($_SESSION['role'] == "Registrar") {
+            echo ' <a href="#" class="btn btn-link ml-2"><i class="fas fa-cog text-gray"></i></a>
+        <a href="../bed-master_key/edit.registrar.php?reg_id= ' . $reg_id . '"
+        class="btn btn-link pos-right mr-2 text-gray"><i class="fas fa-user-edit"></i></a>';
+        } elseif ($_SESSION['role'] == "Student") {
+            echo ' <a href="#" class="btn btn-link ml-2"><i class="fas fa-cog text-gray"></i></a>
+        <a href="../bed-student/edit.student.php"
+        class="btn btn-link pos-right mr-2 text-gray"><i class="fas fa-user-edit"></i></a>';
+        }
+        ?>
+
     </div>
     <!-- sidebar custom -->
 </aside>

@@ -7,42 +7,46 @@
                     if ($_SESSION['role'] == "Master Key") {
                         $get_user = mysqli_query($conn, "SELECT * FROM tbl_master_key WHERE mk_id = '$mk_id'");
                         while ($row = mysqli_fetch_array($get_user)) {
-                            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-0 mb-3" alt="User Image">';
+                            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-0 mb-3" alt="User Image" style="width: 35px; height: 35px;">';
                         }
                     } elseif ($_SESSION['role'] == "Registrar") {
                         $get_user = mysqli_query($conn, "SELECT * FROM tbl_registrars WHERE reg_id = '$reg_id'");
                         while ($row = mysqli_fetch_array($get_user)) {
                             echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-0 mb-3" alt="User Image" style="width: 35px; height: 35px;">';
                         }
-                    }
-                    elseif ($_SESSION['role'] == "Principal") {
+                    } elseif ($_SESSION['role'] == "Principal") {
                         $get_user = mysqli_query($conn, "SELECT * FROM tbl_principals WHERE prin_id = '$prin_id'");
                         while ($row = mysqli_fetch_array($get_user)) {
                             echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-0 mb-3" alt="User Image" style="width: 35px; height: 35px;">';
                         }
-                    }
-                    elseif ($_SESSION['role'] == "Accounting") {
+                    } elseif ($_SESSION['role'] == "Accounting") {
                         $get_user = mysqli_query($conn, "SELECT * FROM tbl_accountings WHERE acc_id = '$acc_id'");
                         while ($row = mysqli_fetch_array($get_user)) {
                             echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-0 mb-3" alt="User Image" style="width: 35px; height: 35px;">';
                         }
-                    }
-                    elseif ($_SESSION['role'] == "Admission") {
+                    } elseif ($_SESSION['role'] == "Admission") {
                         $get_user = mysqli_query($conn, "SELECT * FROM tbl_admissions WHERE admission_id = '$admission_id'");
                         while ($row = mysqli_fetch_array($get_user)) {
                             echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-0 mb-3" alt="User Image" style="width: 35px; height: 35px;">';
                         }
-                    }                                         
-                  elseif ($_SESSION['role'] == "Teacher") {
+                    } elseif ($_SESSION['role'] == "Teacher") {
                         $get_user = mysqli_query($conn, "SELECT * FROM tbl_teachers WHERE teacher_id = '$teacher_id'");
                         while ($row = mysqli_fetch_array($get_user)) {
                             echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-0 mb-3" alt="User Image" style="width: 35px; height: 35px;">';
                         }
-                    }
-                 elseif ($_SESSION['role'] == "Adviser") {
+                    } elseif ($_SESSION['role'] == "Adviser") {
                         $get_user = mysqli_query($conn, "SELECT * FROM tbl_adviser WHERE ad_id = '$ad_id'");
                         while ($row = mysqli_fetch_array($get_user)) {
                             echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-0 mb-3" alt="User Image" style="width: 35px; height: 35px;">';
+                        }
+                    } elseif ($_SESSION['role'] == "Student") {
+                        $get_user = mysqli_query($conn, "SELECT * FROM tbl_students WHERE student_id = '$stud_id'");
+                        while ($row = mysqli_fetch_array($get_user)) {
+                            if (empty(base64_encode($row['img']))) {
+                                echo '<img src="../../../assets/img/red_user.jpg" class="img-circle elevation-0 mb-3" alt="User Image" style="width: 35px; height: 35px;">';
+                            } else {
+                                echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-0 mb-3" alt="User Image" style="width: 35px; height: 35px;">';
+                            }
                         }
                     } ?>
 

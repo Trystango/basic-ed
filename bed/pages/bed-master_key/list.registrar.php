@@ -67,7 +67,8 @@ require '../../includes/bed-session.php';
                                                 FROM tbl_registrars") ?>
                                                 <tr>
                                                     <?php while ($row = mysqli_fetch_array($get_user)) {
-                                                        $id = $row['reg_id']; ?>
+                                                        $id = $row['reg_id'];
+                                                    ?>
                                                     <td><img src="data:image/jpeg;base64, <?php echo base64_encode($row['img']);  ?>"
                                                             class="img zoom " alt="User image"
                                                             style="height: 80px; width: 100px">

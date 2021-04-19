@@ -36,10 +36,14 @@ if (!empty($_SESSION['role'])) {
         if ($ad_id == false) {
             header("location: ../bed-login/login.php");
         }
+    } elseif ($_SESSION['role'] == "Student") {
+        $stud_id = $_SESSION['stud_id'];
+        if ($stud_id == false) {
+            header("location: ../bed-login/login.php");
+        }
     } else {
         header("location: ../bed-login/login.php");
     }
 } else {
     header("location: ../bed-login/login.php");
-    
 }

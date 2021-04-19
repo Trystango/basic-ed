@@ -52,6 +52,8 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <!-- SweetAlert2 -->
 <script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Select2 -->
+<script src="../../plugins/select2/js/select2.full.min.js"></script>
 <!-- DataTables  & Plugins -->
 <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -69,6 +71,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script>
 $(function() {
     bsCustomFileInput.init();
+    $('.select2').select2()
 });
 </script>
 
