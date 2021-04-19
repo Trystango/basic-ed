@@ -285,7 +285,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a class="nav-link">
                         <i class="nav-icon fas fa-hand-holding-medical"></i>
                         <p>
                             Registrar Services
@@ -300,10 +300,27 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../bed-globalPages/add.student.php" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="fa fa-file-medical"></i>
-                                <p class="ml-2"> Add Subject</p>
+                                <p class="ml-2">
+                                    Add Subject
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../bed-registrar/add.sub.k-10.php" class="nav-link">
+                                        <i class="fa fa-file-medical"></i>
+                                        <p class="ml-2"> Primary-Junior High</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../bed-registrar/add.sub.senior.php" class="nav-link">
+                                        <i class="fa fa-file-medical"></i>
+                                        <p class="ml-2"> Senior High</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </li>

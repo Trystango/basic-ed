@@ -108,8 +108,31 @@ title: 'Successfully Added.'
 })
 }); 
 </script>";
+} elseif (isset($_SESSION['subject_exists'])) {
+    echo "<script>
+$(function() {
+    var Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+    });
+    $('.swalDefaultError')
+    Toast.fire({
+        icon: 'error',
+        title:  'Subject Already Exists.'
+    });
+});
+</script>";
+
+
 }
+
+
+
+
 unset($_SESSION['error-pass']);
 unset($_SESSION['success']);
+unset($_SESSION['subject_exists']);
 
 ?>
