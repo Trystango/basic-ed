@@ -11,7 +11,7 @@ if (isset($_POST['upload'])) {
         header('location: ../edit.registrar.php?reg_id=' . $reg_id);
     } else {
         $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-        $set_userInfo = mysqli_query($conn, "UPDATE tbl_registrars SET img = '$image' WHERE reg_id = '$reg_id'");
+        $set_userInfo = mysqli_query($conn, "UPDATE tbl_registrars SET img = '$image' WHERE reg_id = '$reg_id'") or die(mysqli_error($conn));
         $_SESSION['success-regEdit'] = true;
         header('location: ../edit.registrar.php?reg_id=' . $reg_id);
     }
@@ -34,7 +34,7 @@ if (isset($_POST['upload'])) {
             header('location: ../edit.registrar.php?reg_id=' . $reg_id);
         } else {
             $hashpwd = password_hash($password, PASSWORD_BCRYPT);
-            $insertUser = mysqli_query($conn, "UPDATE tbl_registrars SET reg_fname = '$firstname', reg_lname = '$lastname', reg_mname = '$midname', email = '$email', username = '$username', password = '$hashpwd' WHERE reg_id = '$reg_id'");
+            $insertUser = mysqli_query($conn, "UPDATE tbl_registrars SET reg_fname = '$firstname', reg_lname = '$lastname', reg_mname = '$midname', email = '$email', username = '$username', password = '$hashpwd' WHERE reg_id = '$reg_id'") or die(mysqli_error($conn));
             $_SESSION['success-regEdit'] = true;
             header('location: ../edit.registrar.php?reg_id=' . $reg_id);
         }

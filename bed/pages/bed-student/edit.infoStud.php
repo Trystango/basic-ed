@@ -73,11 +73,11 @@ $stud_id = $_SESSION['stud_id'];
                                         <div class="input-group col-sm-6 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
-                                                        Student No.</b>
+                                                        Student ID</b>
                                                 </span>
                                             </div>
                                             <input type="text" class="form-control"
-                                                value="<?php echo $row['stud_no']; ?>" placeholder="Student Number"
+                                                value="<?php echo $row['stud_no']; ?>" placeholder="Student ID"
                                                 disabled>
                                         </div>
 

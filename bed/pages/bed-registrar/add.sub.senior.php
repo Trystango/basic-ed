@@ -78,13 +78,15 @@ require '../../includes/bed-session.php';
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
                                             </div>
-                                            <select class="form-control" name="semester">
+                                            <select class="form-control select2 select2-info custom-select"
+                                                data-dropdown-css-class="select2-info" data-placeholder="Semester"
+                                                name="semester">
                                                 <option disabled selected>Semester</option>
                                                 <?php
                                                 $query = mysqli_query($conn, "SELECT * from tbl_semesters ORDER BY semester DESC");
-                                                    while ($row2 = mysqli_fetch_array($query)){
-                                                        echo '<option value="'.$row2['semester_id'].'">'.$row2['semester'].'</option>';
-                                                    }
+                                                while ($row2 = mysqli_fetch_array($query)) {
+                                                    echo '<option value="' . $row2['semester_id'] . '">' . $row2['semester'] . '</option>';
+                                                }
                                                 ?>
                                             </select>
                                         </div>
@@ -92,13 +94,14 @@ require '../../includes/bed-session.php';
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
                                             </div>
-                                            <select class="form-control" name="grade_level">
+                                            <select class="form-control select2 select2-info custom-select"
+                                                data-dropdown-css-class="select2-info" name="grade_level">
                                                 <option disabled selected>Grade Level</option>
                                                 <?php
                                                 $query = mysqli_query($conn, "SELECT * from tbl_grade_levels LIMIT 13, 2");
-                                                    while ($row2 = mysqli_fetch_array($query)){
-                                                        echo '<option value="'.$row2['grade_level_id'].'">'.$row2['grade_level'].'</option>';
-                                                    }
+                                                while ($row2 = mysqli_fetch_array($query)) {
+                                                    echo '<option value="' . $row2['grade_level_id'] . '">' . $row2['grade_level'] . '</option>';
+                                                }
                                                 ?>
                                             </select>
                                         </div>
@@ -106,17 +109,18 @@ require '../../includes/bed-session.php';
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
                                             </div>
-                                            <select class="form-control" name="strand_name">
+                                            <select class="form-control select2 select2-info custom-select"
+                                                data-dropdown-css-class="select2-info" name="strand_name">
                                                 <option disabled selected>Strand</option>
                                                 <?php
                                                 $query = mysqli_query($conn, "SELECT * from tbl_strands ORDER BY strand_name DESC");
-                                                    while ($row2 = mysqli_fetch_array($query)){
-                                                        echo '<option value="'.$row2['strand_id'].'">'.$row2['strand_name'].'</option>';
-                                                    }
+                                                while ($row2 = mysqli_fetch_array($query)) {
+                                                    echo '<option value="' . $row2['strand_id'] . '">' . $row2['strand_name'] . '</option>';
+                                                }
                                                 ?>
                                             </select>
-                                        </div>                                         
-                                    </div>                                    
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer">

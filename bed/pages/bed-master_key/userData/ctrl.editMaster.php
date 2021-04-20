@@ -11,7 +11,7 @@ if (isset($_POST['upload'])) {
         header('location: ../edit.master.php?mk_id=' . $mk_id);
     } else {
         $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-        $set_userInfo = mysqli_query($conn, "UPDATE tbl_master_key SET img = '$image' WHERE mk_id = '$mk_id'");
+        $set_userInfo = mysqli_query($conn, "UPDATE tbl_master_key SET img = '$image' WHERE mk_id = '$mk_id'") or die(mysqli_error($conn));
         $_SESSION['success-regEdit'] = true;
         header('location: ../edit.master.php?mk_id=' . $mk_id);
     }
@@ -32,7 +32,7 @@ if (isset($_POST['upload'])) {
             header('location: ../edit.master.php?mk_id=' . $mk_id);
         } else {
             $hashpwd = password_hash($password, PASSWORD_BCRYPT);
-            $insertUser = mysqli_query($conn, "UPDATE tbl_master_key SET name = '$name', email = '$email', username = '$username', password = '$hashpwd' WHERE mk_id = '$mk_id'");
+            $insertUser = mysqli_query($conn, "UPDATE tbl_master_key SET name = '$name', email = '$email', username = '$username', password = '$hashpwd' WHERE mk_id = '$mk_id'") or die(mysqli_error($conn));
             $_SESSION['success-mkEdit'] = true;
             header('location: ../edit.master.php.?mk_id=' . $mk_id);
         }

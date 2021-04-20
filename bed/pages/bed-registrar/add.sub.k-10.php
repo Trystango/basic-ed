@@ -76,13 +76,14 @@ require '../../includes/bed-session.php';
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
                                             </div>
-                                            <select class="form-control" name="grade_level">
+                                            <select class="form-control select2 select2-info custom-select"
+                                                data-dropdown-css-class="select2-info" name="grade_level">
                                                 <option disabled selected>Grade Level</option>
                                                 <?php
                                                 $query = mysqli_query($conn, "SELECT * from tbl_grade_levels LIMIT 13");
-                                                    while ($row2 = mysqli_fetch_array($query)){
-                                                        echo '<option value="'.$row2['grade_level_id'].'">'.$row2['grade_level'].'</option>';
-                                                    }
+                                                while ($row2 = mysqli_fetch_array($query)) {
+                                                    echo '<option value="' . $row2['grade_level_id'] . '">' . $row2['grade_level'] . '</option>';
+                                                }
                                                 ?>
                                             </select>
                                         </div>

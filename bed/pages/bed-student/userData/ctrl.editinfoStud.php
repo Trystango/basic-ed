@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
 
 
 
-    $insertUser = mysqli_query($conn, "UPDATE tbl_students SET student_fname = '$firstname', student_lname = '$lastname', student_mname = '$midname', address = '$address', date_birth = '$date_birth', place_birth = '$place_birth', age = '$age', gender_id = '$gender', nationality = '$nationality', religion = '$religion', landline = '$landline', cellphone = '$cellphone', email = '$email', fname = '$fname', focc = '$focc', fcontact = '$fcontact',  mname = '$mname', mocc = '$mocc', mcontact = '$mcontact', month_inc = '$month_inc', no_siblings = '$no_sib', guardname = '$guarname', gaddress = '$gaddress', gcontact = '$gcontact', last_sch = '$last_attend', prev_grade_level = '$prev_grade_level', sch_year = '$sch_year', sch_address = '$sch_address' WHERE student_id = '$stud_id'");
+    $insertUser = mysqli_query($conn, "UPDATE tbl_students SET student_fname = '$firstname', student_lname = '$lastname', student_mname = '$midname', address = '$address', date_birth = '$date_birth', place_birth = '$place_birth', age = '$age', gender_id = '$gender', nationality = '$nationality', religion = '$religion', landline = '$landline', cellphone = '$cellphone', email = '$email', fname = '$fname', focc = '$focc', fcontact = '$fcontact',  mname = '$mname', mocc = '$mocc', mcontact = '$mcontact', month_inc = '$month_inc', no_siblings = '$no_sib', guardname = '$guarname', gaddress = '$gaddress', gcontact = '$gcontact', last_sch = '$last_attend', prev_grade_level = '$prev_grade_level', sch_year = '$sch_year', sch_address = '$sch_address' WHERE student_id = '$stud_id'") or die(mysqli_error($conn));
     $_SESSION['success-studEdit'] = true;
     header('location: ../edit.infoStud.php');
 }

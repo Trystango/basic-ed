@@ -240,6 +240,40 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <i class="nav-icon fas fa-sign-in-alt"></i>
+                        <p>
+                            Enrollment
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <i class="nav-icon fas fa-folder"></i>
+                        <p>
+                            Forms
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-file-pdf mr-1"></i>
+                                <p> Pre-Enrollment</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../bed-forms/regform.php" class="nav-link">
+                                <i class="fa fa-file-pdf mr-1"></i>
+                                <p> Registration</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -286,22 +320,22 @@
 
                 <li class="nav-item">
                     <a class="nav-link">
-                        <i class="nav-icon fas fa-hand-holding-medical"></i>
+                        <i class="nav-icon fas fa-file-medical"></i>
                         <p>
-                            Registrar Services
+                            Data Entry
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../bed-globalPages/add.student.php" class="nav-link">
-                                <i class="fa fa-user-plus"></i>
+                            <a href="../bed-student/add.student.php" class="nav-link">
+                                <i class="fa fa-user-plus mr-1"></i>
                                 <p> Add Student</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="fa fa-file-medical"></i>
+                                <i class="fa fa-book-medical"></i>
                                 <p class="ml-2">
                                     Add Subject
                                     <i class="right fas fa-angle-left"></i>
@@ -309,15 +343,15 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../bed-registrar/add.sub.k-10.php" class="nav-link">
-                                        <i class="fa fa-file-medical"></i>
-                                        <p class="ml-2"> Primary-Junior High</p>
+                                    <a href="../bed-registrar/add.sub.senior.php" class="nav-link">
+                                        <i class="fa fa-plus"></i>
+                                        <p class="ml-2"> Senior High</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../bed-registrar/add.sub.senior.php" class="nav-link">
-                                        <i class="fa fa-file-medical"></i>
-                                        <p class="ml-2"> Senior High</p>
+                                    <a href="../bed-registrar/add.sub.k-10.php" class="nav-link">
+                                        <i class="fa fa-plus"></i>
+                                        <p class="ml-2"> Primary - Junior High</p>
                                     </a>
                                 </li>
                             </ul>
@@ -419,13 +453,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                <a href="../bed-student/edit.infoStud.php" class="nav-link">
-                    <i class="nav-icon fas fa-id-card"></i>
-                    <p>
-                        Personal Info
-                    </p>
-                </a>
-            </li>';
+                    <a href="../bed-student/edit.infoStud.php" class="nav-link">
+                        <i class="nav-icon fas fa-id-card"></i>
+                        <p>
+                            Personal Info
+                        </p>
+                    </a>
+                </li>';
                 }
 
                 // END STUDENT

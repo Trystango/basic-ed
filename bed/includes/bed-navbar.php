@@ -5,12 +5,12 @@
                 <div class="image">
                     <?php
                     if ($_SESSION['role'] == "Master Key") {
-                        $get_user = mysqli_query($conn, "SELECT * FROM tbl_master_key WHERE mk_id = '$mk_id'");
+                        $get_user = mysqli_query($conn, "SELECT * FROM tbl_master_key WHERE mk_id = '$mk_id'") or die(mysqli_error($conn));
                         while ($row = mysqli_fetch_array($get_user)) {
                             echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-0 mb-3" alt="User Image" style="width: 35px; height: 35px;">';
                         }
                     } elseif ($_SESSION['role'] == "Registrar") {
-                        $get_user = mysqli_query($conn, "SELECT * FROM tbl_registrars WHERE reg_id = '$reg_id'");
+                        $get_user = mysqli_query($conn, "SELECT * FROM tbl_registrars WHERE reg_id = '$reg_id'") or die(mysqli_error($conn));
                         while ($row = mysqli_fetch_array($get_user)) {
                             echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-0 mb-3" alt="User Image" style="width: 35px; height: 35px;">';
                         }
@@ -40,7 +40,7 @@
                             echo '<img src="data:image/jpeg;base64,' . base64_encode($row['img']) . '" class="img-circle elevation-0 mb-3" alt="User Image" style="width: 35px; height: 35px;">';
                         }
                     } elseif ($_SESSION['role'] == "Student") {
-                        $get_user = mysqli_query($conn, "SELECT * FROM tbl_students WHERE student_id = '$stud_id'");
+                        $get_user = mysqli_query($conn, "SELECT * FROM tbl_students WHERE student_id = '$stud_id'") or die(mysqli_error($conn));
                         while ($row = mysqli_fetch_array($get_user)) {
                             if (empty(base64_encode($row['img']))) {
                                 echo '<img src="../../../assets/img/red_user.jpg" class="img-circle elevation-0 mb-3" alt="User Image" style="width: 35px; height: 35px;">';

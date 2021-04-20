@@ -58,16 +58,16 @@ require '../../includes/bed-session.php';
                                     <div class="row mb-4 mt-4">
                                         <div class="input-group col-sm-6 mb-2">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
+                                                <span class="input-group-text"><i class="fas fa-id-card-alt"></i></span>
                                             </div>
                                             <input type="text" class="form-control" name="studno"
-                                                placeholder="Student No." required>
+                                                placeholder="Student ID" required>
                                         </div>
 
 
                                         <div class="input-group col-sm-6 mb-2">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
+                                                <span class="input-group-text"><i class="fas fa-id-badge"></i></span>
                                             </div>
                                             <input type="text" class="form-control" name="lrn"
                                                 placeholder="Learner Reference Number(LRN)" required>

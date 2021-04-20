@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
         header('location: ../add.student.php');
     } else {
         $hashpwd = password_hash($password, PASSWORD_BCRYPT);
-        $insertUser = mysqli_query($conn, "INSERT INTO tbl_students (stud_no, lrn, username, password) VALUES ('$studno', '$lrn', '$username', '$hashpwd')");
+        $insertUser = mysqli_query($conn, "INSERT INTO tbl_students (stud_no, lrn, username, password) VALUES ('$studno', '$lrn', '$username', '$hashpwd')") or die(mysqli_error($conn));
         $_SESSION['success'] = true;
         header('location: ../add.student.php');
     }

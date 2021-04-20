@@ -11,7 +11,7 @@ if (isset($_POST['upload'])) {
         header('location: ../edit.student.php');
     } else {
         $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-        $set_userInfo = mysqli_query($conn, "UPDATE tbl_students SET img = '$image' WHERE student_id = '$stud_id'");
+        $set_userInfo = mysqli_query($conn, "UPDATE tbl_students SET img = '$image' WHERE student_id = '$stud_id'") or die(mysqli_error($conn));
         $_SESSION['success-studEdit'] = true;
         header('location: ../edit.student.php');
     }
@@ -34,7 +34,7 @@ if (isset($_POST['upload'])) {
             header('location: ../edit.student.php');
         } else {
             $hashpwd = password_hash($password, PASSWORD_BCRYPT);
-            $insertUser = mysqli_query($conn, "UPDATE tbl_students SET student_fname = '$firstname', student_lname = '$lastname', student_mname = '$midname', email = '$email', username = '$username', password = '$hashpwd' WHERE student_id = '$stud_id'");
+            $insertUser = mysqli_query($conn, "UPDATE tbl_students SET student_fname = '$firstname', student_lname = '$lastname', student_mname = '$midname', email = '$email', username = '$username', password = '$hashpwd' WHERE student_id = '$stud_id'") or die(mysqli_error($conn));
             $_SESSION['success-studEdit'] = true;
             header('location: ../edit.student.php');
         }

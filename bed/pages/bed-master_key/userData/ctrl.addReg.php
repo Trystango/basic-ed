@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
         header('location: ../add.registrar.php');
     } else {
         $hashpwd = password_hash($password, PASSWORD_BCRYPT);
-        $insertUser = mysqli_query($conn, "INSERT INTO tbl_registrars (img, reg_fname, reg_lname, reg_mname, position, activation_code, email, username, password) VALUES ('$image', '$firstname', '$lastname', '$midname', '', '', '$email', '$username', '$hashpwd')");
+        $insertUser = mysqli_query($conn, "INSERT INTO tbl_registrars (img, reg_fname, reg_lname, reg_mname, position, activation_code, email, username, password) VALUES ('$image', '$firstname', '$lastname', '$midname', '', '', '$email', '$username', '$hashpwd')") or die(mysqli_error($conn));
         $_SESSION['success'] = true;
         header('location: ../add.registrar.php');
     }
