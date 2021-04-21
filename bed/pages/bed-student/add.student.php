@@ -14,7 +14,7 @@ require '../../includes/bed-session.php';
 <!-- Head and links -->
 
 <head>
-    <title>SFAC | Add Student</title>
+    <title>SFAC | Add Students</title>
     <?php include '../../includes/bed-head.php'; ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -55,8 +55,8 @@ require '../../includes/bed-session.php';
                             <form action="userData/ctrl.addStud.php" enctype="multipart/form-data" method="POST">
                                 <div class="card-body">
 
-                                    <div class="row mb-4 mt-4">
-                                        <div class="input-group col-sm-6 mb-2">
+                                    <div class="row mb-4 mt-4 justify-content-center">
+                                        <div class="input-group col-sm-5 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-id-card-alt"></i></span>
                                             </div>
@@ -65,7 +65,7 @@ require '../../includes/bed-session.php';
                                         </div>
 
 
-                                        <div class="input-group col-sm-6 mb-2">
+                                        <div class="input-group col-sm-5 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-id-badge"></i></span>
                                             </div>
@@ -94,7 +94,7 @@ require '../../includes/bed-session.php';
                                         <!-- /.form-group -->
 
 
-                                        <div class="input-group col-sm-6 mb-2 ml-auto mr-auto">
+                                        <div class="input-group col-sm-5 mb-2 ml-auto mr-auto">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                                             </div>
@@ -104,8 +104,8 @@ require '../../includes/bed-session.php';
                                     </div>
 
 
-                                    <div class="row mb-4">
-                                        <div class="input-group col-sm-6 mb-2">
+                                    <div class="row mb-4 justify-content-center">
+                                        <div class="input-group col-sm-5 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
                                             </div>
@@ -114,7 +114,7 @@ require '../../includes/bed-session.php';
                                         </div>
 
 
-                                        <div class="input-group col-sm-6 mb-2">
+                                        <div class="input-group col-sm-5 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
                                             </div>

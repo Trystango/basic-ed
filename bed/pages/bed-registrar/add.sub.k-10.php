@@ -14,7 +14,7 @@ require '../../includes/bed-session.php';
 <!-- Head and links -->
 
 <head>
-    <title>SFAC | Add Student</title>
+    <title>SFAC | Add Subjects</title>
     <?php include '../../includes/bed-head.php'; ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -28,7 +28,7 @@ require '../../includes/bed-session.php';
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link disabled text-light">Add Student</a>
+                    <a href="#" class="nav-link disabled text-light">Add Subject</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link disabled text-light">Basic Education</a>
@@ -55,30 +55,33 @@ require '../../includes/bed-session.php';
                             <form action="userData/ctrl.add.sub.k-10.php" enctype="multipart/form-data" method="POST">
                                 <div class="card-body">
 
-                                    <div class="row mb-4 mt-4">
-                                        <div class="input-group col-sm-3 mb-2">
+                                    <div class="row mb-4 mt-4 justify-content-center">
+                                        <div class="input-group col-sm-4 mb-2">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
+                                                <span class="input-group-text text-sm"><b>Code</b></span>
                                             </div>
                                             <input type="text" class="form-control" name="subject_code"
-                                                placeholder="Subject Code" required>
+                                                placeholder="Enter Subject Code" required>
                                         </div>
 
 
                                         <div class="input-group col-sm-6 mb-2">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
+                                                <span class="input-group-text text-sm"><b>Description</b></span>
                                             </div>
                                             <input type="text" class="form-control" name="subject_description"
-                                                placeholder="Subject Description" required>
+                                                placeholder="Enter Subject Description" required>
                                         </div>
-                                        <div class="input-group col-sm-3 mb-2">
+                                    </div>
+
+                                    <div class="row mb-4 mt-4 justify-content-center">
+                                        <div class="input-group col-sm-5 mb-2">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fas fa-keyboard"></i></span>
+                                                <span class="input-group-text text-sm"><b>Grade Level</b></span>
                                             </div>
                                             <select class="form-control select2 select2-info custom-select"
                                                 data-dropdown-css-class="select2-info" name="grade_level">
-                                                <option disabled selected>Grade Level</option>
+                                                <option disabled selected>Select Grade Level</option>
                                                 <?php
                                                 $query = mysqli_query($conn, "SELECT * from tbl_grade_levels LIMIT 13");
                                                 while ($row2 = mysqli_fetch_array($query)) {
@@ -88,11 +91,12 @@ require '../../includes/bed-session.php';
                                             </select>
                                         </div>
                                     </div>
+
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer">
-                                    <button type="submit" name="submit" class="btn btn-info"><i
-                                            class="fa fa-user-plus"></i> Add</button>
+                                    <button type="submit" name="submit" class="btn btn-info"><i class="fa fa-plus"></i>
+                                        Add Subject</button>
                                 </div>
                             </form>
                         </div>

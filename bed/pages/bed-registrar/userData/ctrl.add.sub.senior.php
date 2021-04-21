@@ -11,14 +11,16 @@ if (isset($_POST['submit'])) {
     $grade_level = mysqli_real_escape_string($conn, $_POST['grade_level']);
     $strand_name = mysqli_real_escape_string($conn, $_POST['strand_name']);
 
-    $check = mysqli_query($conn, "SELECT *, tbl_grade_levels.grade_level_id FROM tbl_subjects
-        LEFT JOIN tbl_semesters.semester_id = tbl_subjects_senior.semester_id,
-        LEFT JOIN tbl_grade_levels.grade_level_id = tbl_subjects_senior.grade_level_id,
-        LEFT JOIN tbl_strands.strand_id = tbl_subjects_senior.strand_id
-        WHERE subject_code = '$subject_code' AND subject_description = '$subject_description' AND semester = '$semester' AND grade_level = '$grade_level' AND strand_name = '$strand_name'");
-    $input = mysqli_num_rows($check);
+    $check_double = mysqli_query($conn, "SELECT * FROM tbl_subjects_senior 
+    LEFT JOIN tbl_grade_levels ON tbl_grade_levels.grade_level_id = tbl_subjects_senior.grade_level_id
+    LEFT JOIN tbl_semesters ON tbl_semesters.semester_id = tbl_subjects_senior.semester_id
+    LEFT JOIN tbl_strands ON tbl_strands.strand_id = tbl_subjects_senior.strand_id
+    WHERE tbl_subjects_senior.subject_code = '$subject_code' AND tbl_subjects_senior.subject_description = '$subject_description' AND tbl_subjects_senior.grade_level_id = '$grade_level' AND tbl_subjects_senior.semester_id = '$semester' AND tbl_subjects_senior.strand_id = '$strand_name'") or die(mysqli_error($conn));
 
-    if ($input == 0) {
+    $result = mysqli_num_rows($check_double);
+
+
+    if ($result == 0) {
         $insertUser = mysqli_query($conn, "INSERT INTO tbl_subjects_senior (subject_code, subject_description, semester_id, grade_level_id, strand_id) VALUES ('$subject_code', '$subject_description', '$semester', '$grade_level', '$strand_name')") or die(mysqli_error($conn));
         $_SESSION['success'] = true;
         header('location: ../add.sub.senior.php');
