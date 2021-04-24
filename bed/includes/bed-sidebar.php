@@ -252,6 +252,47 @@
 
                 <li class="nav-item">
                     <a class="nav-link">
+                        <i class="nav-icon fas fa-cog"></i>
+                        <p>
+                            Maintenance
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="../bed-student/list.student.php" class="nav-link">
+                                <i class="fa fa-restroom nav-icon"></i>
+                                <p> Students List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Subjets List
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../bed-registrar/list.subjectSH.php" class="nav-link">
+                                        <i class="fa fa-list-alt nav-icon"></i>
+                                        <p> Senior High</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../bed-registrar/list.subjectPJH.php" class="nav-link">
+                                        <i class="fa fa-list-alt nav-icon"></i>
+                                        <p> Primary - Junior High</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link">
                         <i class="nav-icon fas fa-folder"></i>
                         <p>
                             Forms
@@ -261,13 +302,13 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="fa fa-file-pdf mr-1"></i>
+                                <i class="fa fa-file-pdf nav-icon"></i>
                                 <p> Pre-Enrollment</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="../bed-forms/regform.php" class="nav-link">
-                                <i class="fa fa-file-pdf mr-1"></i>
+                                <i class="fa fa-file-pdf nav-icon"></i>
                                 <p> Registration</p>
                             </a>
                         </li>
@@ -287,31 +328,31 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="../bed-hedCurr/abm.php" class="nav-link">
-                                <i class="fa fa-file-alt"> </i>
+                                <i class="fa fa-file-alt nav-icon"> </i>
                                 <p class="ml-1"> ABM</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="../bed-hedCurr/gas.php" class="nav-link">
-                                <i class="fa fa-file-alt"> </i>
+                                <i class="fa fa-file-alt nav-icon"> </i>
                                 <p class="ml-1"> GAS</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="../bed-hedCurr/humss.php" class="nav-link">
-                                <i class="fa fa-file-alt"> </i>
+                                <i class="fa fa-file-alt nav-icon"> </i>
                                 <p class="ml-1"> HUMSS</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="../bed-hedCurr/stem.php" class="nav-link">
-                                <i class="fa fa-file-alt"> </i>
+                                <i class="fa fa-file-alt nav-icon"> </i>
                                 <p class="ml-1"> STEM</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="../bed-hedCurr/tvl.php" class="nav-link">
-                                <i class="fa fa-file-alt"> </i>
+                                <i class="fa fa-file-alt nav-icon"> </i>
                                 <p class="ml-1"> TVL</p>
                             </a>
                         </li>
@@ -329,14 +370,14 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="../bed-student/add.student.php" class="nav-link">
-                                <i class="fa fa-user-plus mr-1"></i>
+                                <i class="fa fa-user-plus nav-icon"></i>
                                 <p> Add Student</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="fa fa-book-medical"></i>
-                                <p class="ml-2">
+                                <i class="fa fa-book-medical nav-icon"></i>
+                                <p>
                                     Add Subject
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
@@ -344,14 +385,14 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="../bed-registrar/add.sub.senior.php" class="nav-link">
-                                        <i class="fa fa-plus"></i>
-                                        <p class="ml-2"> Senior High</p>
+                                        <i class="fa fa-plus nav-icon"></i>
+                                        <p> Senior High</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="../bed-registrar/add.sub.k-10.php" class="nav-link">
-                                        <i class="fa fa-plus"></i>
-                                        <p class="ml-2"> Primary - Junior High</p>
+                                        <i class="fa fa-plus nav-icon"></i>
+                                        <p> Primary - Junior High</p>
                                     </a>
                                 </li>
                             </ul>
@@ -473,17 +514,18 @@
     <!-- /.sidebar -->
 
     <!-- sidebar custom -->
-    <div class="sidebar-custom">
+    <div class="sidebar-custom justify-content-center">
         <?php if ($_SESSION['role'] == "Master Key") {
             echo ' <a href="#" class="btn btn-link ml-2"><i class="fas fa-cog text-gray"></i></a>
         <a href="../bed-master_key/edit.master.php"
         class="btn btn-link pos-right mr-2 text-gray"><i class="fas fa-user-edit"></i></a>';
         } elseif ($_SESSION['role'] == "Registrar") {
-            echo ' <a href="#" class="btn btn-link ml-2"><i class="fas fa-cog text-gray"></i></a>
+            echo ' <a href="../bed-date/add.date.php" class="btn btn-link ml-1 mr-4"><i class="fas fa-calendar-plus text-gray"></i></a>
+            <a href="../bed-date/set.date.php" class="btn btn-link ml-4 mr-auto"><i class="fas fa-calendar-alt text-gray"></i></a>
         <a href="../bed-master_key/edit.registrar.php?reg_id= ' . $reg_id . '"
-        class="btn btn-link pos-right mr-2 text-gray"><i class="fas fa-user-edit"></i></a>';
+        class="btn btn-link pos-right mr-1 text-gray"><i class="fas fa-user-edit"></i></a>';
         } elseif ($_SESSION['role'] == "Student") {
-            echo ' <a href="#" class="btn btn-link ml-2"><i class="fas fa-cog text-gray"></i></a>
+            echo ' <a href="#" class="btn btn-link ml-2"><i class="fas fa-calendar-alt text-gray"></i></a>
         <a href="../bed-student/edit.student.php"
         class="btn btn-link pos-right mr-2 text-gray"><i class="fas fa-user-edit"></i></a>';
         }

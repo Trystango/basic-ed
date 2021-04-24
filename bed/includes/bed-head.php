@@ -41,7 +41,7 @@
 }
 
 body {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .custom-file-label {
@@ -60,7 +60,10 @@ body {
 
 .table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #001f3f;
+    border-top: unset !important;
+    border-bottom: unset !important;
+
+
 }
 
 .page-item.active .page-link {

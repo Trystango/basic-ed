@@ -56,7 +56,7 @@ require '../../includes/bed-session.php';
                                 <div class="card-body">
 
                                     <div class="row mb-4 mt-4 justify-content-center">
-                                        <div class="input-group col-sm-4 mb-2">
+                                        <div class="input-group col-md-4 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>Code</b></span>
                                             </div>
@@ -65,7 +65,7 @@ require '../../includes/bed-session.php';
                                         </div>
 
 
-                                        <div class="input-group col-sm-6 mb-2">
+                                        <div class="input-group col-md-6 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>Description</b></span>
                                             </div>
@@ -73,22 +73,56 @@ require '../../includes/bed-session.php';
                                                 placeholder="Enter Subject Description" required>
                                         </div>
 
+                                    </div>
 
+                                    <div class="row mb-4 justify-content-center">
+                                        <div class="input-group col-md-3 mb-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text text-sm"><b>Unit(s)</b></span>
+                                            </div>
+                                            <input type="text" class="form-control" name="units"
+                                                placeholder="Enter Total Unit(s)" required>
+                                        </div>
+
+                                        <div class="input-group col-md-5 mb-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text text-sm"><b>Pre-Requisites</b></span>
+                                            </div>
+                                            <input type="text" class="form-control" name="prerequisites"
+                                                placeholder="Enter Pre-Requisites">
+                                        </div>
+
+                                        <div class="input-group col-md-3 mb-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text text-sm"><b>E.A.Y</b></span>
+                                            </div>
+                                            <select class="form-control select2 select2-info custom-select"
+                                                data-dropdown-css-class="select2-info"
+                                                data-placeholder="Effective Academic" name="eay" required>
+                                                <option value="" disabled selected>Select Semester</option>
+                                                <?php
+                                                $query = mysqli_query($conn, "SELECT * from tbl_efacadyears ");
+                                                while ($row2 = mysqli_fetch_array($query)) {
+                                                    echo '<option value="' . $row2['efacadyear_id'] . '">' . $row2['efacadyear'] . '</option>';
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
 
                                     </div>
 
                                     <div class="row mb-4 mt-4 justify-content-center">
 
-                                        <div class="input-group col-sm-4 mb-2">
+                                        <div class="input-group col-md-4 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>Semester</b></span>
                                             </div>
                                             <select class="form-control select2 select2-info custom-select"
-                                                data-dropdown-css-class="select2-info" data-placeholder="Semester"
-                                                name="semester">
-                                                <option disabled selected>Select Semester</option>
+                                                data-dropdown-css-class="select2-info"
+                                                data-placeholder="Select Semester" name="semester" required>
+                                                <option value="" disabled selected>Select Semester</option>
                                                 <?php
-                                                $query = mysqli_query($conn, "SELECT * from tbl_semesters ORDER BY semester DESC");
+                                                $query = mysqli_query($conn, "SELECT * from tbl_semesters");
                                                 while ($row2 = mysqli_fetch_array($query)) {
                                                     echo '<option value="' . $row2['semester_id'] . '">' . $row2['semester'] . '</option>';
                                                 }
@@ -96,13 +130,14 @@ require '../../includes/bed-session.php';
                                             </select>
                                         </div>
 
-                                        <div class="input-group col-sm-4 mb-2">
+                                        <div class="input-group col-md-4 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>Grade Level</b></span>
                                             </div>
                                             <select class="form-control select2 select2-info custom-select"
-                                                data-dropdown-css-class="select2-info" name="grade_level">
-                                                <option disabled selected>Select Grade Level</option>
+                                                data-dropdown-css-class="select2-info"
+                                                data-placeholder="Select Grade Level" name="grade_level" required>
+                                                <option value="" disabled selected>Select Grade Level</option>
                                                 <?php
                                                 $query = mysqli_query($conn, "SELECT * from tbl_grade_levels LIMIT 13, 2");
                                                 while ($row2 = mysqli_fetch_array($query)) {
@@ -111,15 +146,16 @@ require '../../includes/bed-session.php';
                                                 ?>
                                             </select>
                                         </div>
-                                        <div class="input-group col-sm-3 mb-2">
+                                        <div class="input-group col-md-3 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>Strand</b></span>
                                             </div>
                                             <select class="form-control select2 select2-info custom-select"
-                                                data-dropdown-css-class="select2-info" name="strand_name">
-                                                <option disabled selected>Select Strand</option>
+                                                data-dropdown-css-class="select2-info" data-placeholder="Select Strand"
+                                                name="strand_name" required>
+                                                <option value="" disabled selected>Select Strand</option>
                                                 <?php
-                                                $query = mysqli_query($conn, "SELECT * from tbl_strands ORDER BY strand_name DESC");
+                                                $query = mysqli_query($conn, "SELECT * from tbl_strands");
                                                 while ($row2 = mysqli_fetch_array($query)) {
                                                     echo '<option value="' . $row2['strand_id'] . '">' . $row2['strand_name'] . '</option>';
                                                 }

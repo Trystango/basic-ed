@@ -54,6 +54,9 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
 <!-- Select2 -->
 <script src="../../plugins/select2/js/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="../../plugins/moment/moment.min.js"></script>
+<script src="../../plugins/inputmask/jquery.inputmask.min.js"></script>
 <!-- DataTables  & Plugins -->
 <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -67,11 +70,18 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
 <!-- file  -->
 <script>
 $(function() {
     bsCustomFileInput.init();
     $('.select2').select2()
+
+    //Datemask dd/mm/yyyy
+    $('#datemask').inputmask('dd/mm/yyyy', {
+        'placeholder': 'dd/mm/yyyy'
+    })
+    $('[data-mask]').inputmask()
 });
 </script>
 
@@ -120,12 +130,10 @@ $(function() {
     $('.swalDefaultError')
     Toast.fire({
         icon: 'error',
-        title:  'Subject Already Exists.'
+        title:  'Subject Already Exists!'
     });
 });
 </script>";
-
-
 }
 
 

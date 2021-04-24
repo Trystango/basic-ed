@@ -70,7 +70,7 @@ $stud_id = $_SESSION['stud_id'];
                                 <div class="card-body">
 
                                     <div class="form-group row mb-3 mt-3">
-                                        <div class="input-group col-sm-6 mb-2">
+                                        <div class="input-group col-md-6 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Student ID</b>
@@ -81,7 +81,7 @@ $stud_id = $_SESSION['stud_id'];
                                                 disabled>
                                         </div>
 
-                                        <div class="input-group col-sm-6 mb-2">
+                                        <div class="input-group col-md-6 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         LRN</b></span>
@@ -96,7 +96,7 @@ $stud_id = $_SESSION['stud_id'];
 
                                     <div class="form-group row mb-3">
 
-                                        <div class="input-group col-sm-4 mb-2">
+                                        <div class="input-group col-md-4 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Lastname</b></span>
@@ -105,7 +105,7 @@ $stud_id = $_SESSION['stud_id'];
                                                 value="<?php echo $row['student_lname']; ?>" name="lastname">
                                         </div>
 
-                                        <div class="input-group col-sm-4 mb-2">
+                                        <div class="input-group col-md-4 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Firstname</b></span>
@@ -114,7 +114,7 @@ $stud_id = $_SESSION['stud_id'];
                                                 value="<?php echo $row['student_fname']; ?>" name="firstname">
                                         </div>
 
-                                        <div class="input-group col-sm-4 mb-2">
+                                        <div class="input-group col-md-4 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Middlename</b></span>
@@ -127,7 +127,7 @@ $stud_id = $_SESSION['stud_id'];
 
                                     <div class="form-group row mb-3">
 
-                                        <div class="input-group col-sm-12 mb-2">
+                                        <div class="input-group col-md-12 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Address</b></span>
@@ -142,7 +142,7 @@ $stud_id = $_SESSION['stud_id'];
 
                                     <div class="form-group row mb-3">
 
-                                        <div class="input-group col-sm-4 mb-2">
+                                        <div class="input-group col-md-4 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Date of Birth</b></span>
@@ -151,7 +151,7 @@ $stud_id = $_SESSION['stud_id'];
                                                 placeholder="dd/mm/yyyy" value="<?php echo $row['date_birth']; ?>">
                                         </div>
 
-                                        <div class="input-group col-sm-4 mb-2">
+                                        <div class="input-group col-md-4 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Place of Birth</b></span>
@@ -160,7 +160,7 @@ $stud_id = $_SESSION['stud_id'];
                                                 value="<?php echo $row['place_birth']; ?>" placeholder="city, province">
                                         </div>
 
-                                        <div class="input-group col-sm-4 mb-2">
+                                        <div class="input-group col-md-4 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Age</b></span>
@@ -173,7 +173,7 @@ $stud_id = $_SESSION['stud_id'];
 
                                     <div class="form-group row mb-3">
 
-                                        <div class="input-group col-sm-4 mb-2">
+                                        <div class="input-group col-md-4 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Gender</b></span>
@@ -202,7 +202,7 @@ $stud_id = $_SESSION['stud_id'];
 
                                         </div>
 
-                                        <div class="input-group col-sm-4 mb-2">
+                                        <div class="input-group col-md-4 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Nationality</b></span>
@@ -211,7 +211,7 @@ $stud_id = $_SESSION['stud_id'];
                                                 value="<?php echo $row['nationality']; ?>" name="nationality">
                                         </div>
 
-                                        <div class="input-group col-sm-4 mb-2">
+                                        <div class="input-group col-md-4 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Religion</b></span>
@@ -224,7 +224,7 @@ $stud_id = $_SESSION['stud_id'];
 
                                     <div class="form-group row mb-3">
 
-                                        <div class="input-group col-sm-4 mb-2 ml-auto mr-auto">
+                                        <div class="input-group col-md-4 mb-2 ml-auto mr-auto">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Landline No.</b></span>
@@ -233,7 +233,7 @@ $stud_id = $_SESSION['stud_id'];
                                                 value="<?php echo $row['landline']; ?>" name="landline">
                                         </div>
 
-                                        <div class="input-group col-sm-4 mb-2 ml-auto mr-auto">
+                                        <div class="input-group col-md-4 mb-2 ml-auto mr-auto">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Cell Phone No.</b></span>
@@ -246,7 +246,7 @@ $stud_id = $_SESSION['stud_id'];
 
                                     <div class="form-group row mb-3">
 
-                                        <div class="input-group col-sm-12 mb-2">
+                                        <div class="input-group col-md-12 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Email Address</b></span>
@@ -271,7 +271,7 @@ $stud_id = $_SESSION['stud_id'];
 
                                     <div class="form-group row mb-3 mt-3">
 
-                                        <div class="input-group col-sm-6 mb-2">
+                                        <div class="input-group col-md-6 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Name of Father</b></span>
@@ -280,7 +280,7 @@ $stud_id = $_SESSION['stud_id'];
                                                 value="<?php echo $row['fname']; ?>" name="fname">
                                         </div>
 
-                                        <div class="input-group col-sm-6 mb-2">
+                                        <div class="input-group col-md-6 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         F. Occupation</b></span>
@@ -293,7 +293,7 @@ $stud_id = $_SESSION['stud_id'];
 
                                     <div class="form-group row mb-3">
 
-                                        <div class="input-group col-sm-12 mb-2">
+                                        <div class="input-group col-md-12 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Contact No.</b></span>
@@ -306,7 +306,7 @@ $stud_id = $_SESSION['stud_id'];
 
                                     <div class="form-group row mb-3">
 
-                                        <div class="input-group col-sm-6 mb-2">
+                                        <div class="input-group col-md-6 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Name of Mother</b></span>
@@ -315,7 +315,7 @@ $stud_id = $_SESSION['stud_id'];
                                                 value="<?php echo $row['mname']; ?>" name="mname">
                                         </div>
 
-                                        <div class="input-group col-sm-6 mb-2">
+                                        <div class="input-group col-md-6 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         M. Occupation</b></span>
@@ -328,7 +328,7 @@ $stud_id = $_SESSION['stud_id'];
 
                                     <div class="form-group row mb-3">
 
-                                        <div class="input-group col-sm-12 mb-2">
+                                        <div class="input-group col-md-12 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Contact No.</b></span>
@@ -342,7 +342,7 @@ $stud_id = $_SESSION['stud_id'];
                                     <div class="form-group row mb-3">
 
 
-                                        <div class="input-group col-sm-4 mb-2 ml-auto mr-auto">
+                                        <div class="input-group col-md-4 mb-2 ml-auto mr-auto">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Monthly Income</b></span>
@@ -351,7 +351,7 @@ $stud_id = $_SESSION['stud_id'];
                                                 value="<?php echo $row['month_inc']; ?>" name="month_inc">
                                         </div>
 
-                                        <div class="input-group col-sm-4 mb-2 ml-auto mr-auto">
+                                        <div class="input-group col-md-4 mb-2 ml-auto mr-auto">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         No. of Siblings</b></span>
@@ -365,7 +365,7 @@ $stud_id = $_SESSION['stud_id'];
 
                                     <div class="form-group row mb-3">
 
-                                        <div class="input-group col-sm-12 mb-2">
+                                        <div class="input-group col-md-12 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Guardian N.</b></span>
@@ -379,7 +379,7 @@ $stud_id = $_SESSION['stud_id'];
                                     <div class="form-group row mb-3">
 
 
-                                        <div class="input-group col-sm-12 mb-2">
+                                        <div class="input-group col-md-12 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Address</b></span>
@@ -394,7 +394,7 @@ $stud_id = $_SESSION['stud_id'];
                                     <div class="form-group row mb-3">
 
 
-                                        <div class="input-group col-sm-12 mb-2">
+                                        <div class="input-group col-md-12 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Contact No.</b></span>
@@ -423,7 +423,7 @@ $stud_id = $_SESSION['stud_id'];
 
                                     <div class="form-group row mb-3 mt-3">
 
-                                        <div class="input-group col-sm-12 mb-2">
+                                        <div class="input-group col-md-12 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         SCH. Last Attended</b></span>
@@ -438,7 +438,7 @@ $stud_id = $_SESSION['stud_id'];
 
 
 
-                                        <div class="input-group col-sm-6 mb-2">
+                                        <div class="input-group col-md-6 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         Grade Level</b></span>
@@ -467,7 +467,7 @@ $stud_id = $_SESSION['stud_id'];
                                             </select>
                                         </div>
 
-                                        <div class="input-group col-sm-6 mb-2">
+                                        <div class="input-group col-md-6 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         School Year</b></span>
@@ -480,7 +480,7 @@ $stud_id = $_SESSION['stud_id'];
 
                                     <div class="form-group row mb-3">
 
-                                        <div class="input-group col-sm-12 mb-2">
+                                        <div class="input-group col-md-12 mb-2">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text text-sm"><b>
                                                         School Address</b></span>
