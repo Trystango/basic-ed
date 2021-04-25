@@ -179,9 +179,10 @@ $stud_id = $_SESSION['stud_id'];
                                                         Gender</b></span>
                                             </div>
                                             <select class="form-control custom-select select2 select2-purple"
-                                                data-dropdown-css-class="select2-purple" name="gender">
+                                                data-dropdown-css-class="select2-purple"
+                                                data-placeholder="Select Gender" name="gender">
                                                 <?php if (empty($row['gender_id'])) {
-                                                        echo '<option disabled selected>Select Gender</option>';
+                                                        echo '<option value="" disabled selected>Select Gender</option>';
                                                         $get_gender = mysqli_query($conn, "SELECT * FROM tbl_genders");
                                                         while ($row2 = mysqli_fetch_array($get_gender)) {
                                                             echo '
@@ -444,9 +445,10 @@ $stud_id = $_SESSION['stud_id'];
                                                         Grade Level</b></span>
                                             </div>
                                             <select class="form-control custom-select select2 select2-purple"
-                                                data-dropdown-css-class="select2-purple" name="prev_grade_level">
+                                                data-dropdown-css-class="select2-purple"
+                                                data-placeholder="Select Grade Level" name="prev_grade_level">
                                                 <?php if (empty($row['prev_grade_level'])) {
-                                                        echo '<option disabled selected>Select Grade Level</option>';
+                                                        echo '<option value="" disabled selected>Select Grade Level</option>';
                                                         $get_glevel = mysqli_query($conn, "SELECT * FROM tbl_grade_levels");
                                                         while ($row2 = mysqli_fetch_array($get_glevel)) {
                                                             echo '<option value="' . $row2['grade_level'] . '">'

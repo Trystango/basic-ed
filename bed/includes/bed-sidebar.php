@@ -110,7 +110,8 @@
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu"
+                data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -241,7 +242,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-sign-in-alt"></i>
                         <p>
                             Enrollment
@@ -251,7 +252,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-cog"></i>
                         <p>
                             Maintenance
@@ -266,7 +267,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Subjets List
@@ -275,13 +276,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../bed-registrar/list.subjectSH.php" class="nav-link">
+                                    <a href="../bed-subjects/list.subjectSH.php" class="nav-link">
                                         <i class="fa fa-list-alt nav-icon"></i>
                                         <p> Senior High</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../bed-registrar/list.subjectPJH.php" class="nav-link">
+                                    <a href="../bed-subjects/list.subjectPJH.php" class="nav-link">
                                         <i class="fa fa-list-alt nav-icon"></i>
                                         <p> Primary - Junior High</p>
                                     </a>
@@ -292,7 +293,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-folder"></i>
                         <p>
                             Forms
@@ -360,7 +361,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-file-medical"></i>
                         <p>
                             Data Entry
@@ -384,13 +385,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../bed-registrar/add.sub.senior.php" class="nav-link">
+                                    <a href="../bed-subjects/add.sub.senior.php" class="nav-link">
                                         <i class="fa fa-plus nav-icon"></i>
                                         <p> Senior High</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../bed-registrar/add.sub.k-10.php" class="nav-link">
+                                    <a href="../bed-subjects/add.sub.k-10.php" class="nav-link">
                                         <i class="fa fa-plus nav-icon"></i>
                                         <p> Primary - Junior High</p>
                                     </a>

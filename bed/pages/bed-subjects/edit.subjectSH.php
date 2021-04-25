@@ -17,7 +17,7 @@ $_SESSION['get_subID'] = $sub_id;
 <!-- Head and links -->
 
 <head>
-    <title>SFAC | Update Subject</title>
+    <title>SFAC | Update Subjects</title>
     <?php include '../../includes/bed-head.php'; ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -51,7 +51,7 @@ $_SESSION['get_subID'] = $sub_id;
                     <div class="container-fluid pl-5 pr-5 pb-3">
                         <div class="card card-purple shadow-lg">
                             <div class="card-header">
-                                <h3 class="card-title">Update Senior High Subject</h3>
+                                <h3 class="card-title">Update Subjects for Senior High School Deparment</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->

@@ -5,11 +5,24 @@ ob_start();
 
 require '../../includes/bed-session.php';
 
-if (empty($_POST)) {
-    $efacadyear = mysqli_query($conn, "SELECT * FROM tbl_efacadyears WHERE efacadyears LIMIT ,1");
-} else {
+if (!empty($_POST['eay'])) {
     $efacadyear = $_POST['eay'];
 }
+
+
+if (isset($_POST['stem'])) {
+    $str_name = $_POST['stem'];
+} elseif (isset($_POST['abm'])) {
+    $str_name = $_POST['abm'];
+} elseif (isset($_POST['gas'])) {
+    $str_name = $_POST['gas'];
+} elseif (isset($_POST['humss'])) {
+    $str_name = $_POST['humss'];
+} elseif (isset($_POST['tvl'])) {
+    $str_name = $_POST['tvl'];
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -53,19 +66,19 @@ if (empty($_POST)) {
                             <div class="col-12">
                                 <div class="card shadow">
                                     <div class="card-header bg-navy p-3">
-                                        <h3 class="card-title"> High Subjects List -<?php if (isset($_POST['stem'])) {
-                                                                                        echo ' STEM';
-                                                                                    } elseif (isset($_POST['abm'])) {
-                                                                                        echo ' ABM';
-                                                                                    } elseif (isset($_POST['gas'])) {
-                                                                                        echo ' GAS';
-                                                                                    } elseif (isset($_POST['humss'])) {
-                                                                                        echo ' HUMSS';
-                                                                                    } elseif (isset($_POST['tvl'])) {
-                                                                                        echo ' TVL-HE';
-                                                                                    } else {
-                                                                                        echo ' STEM';
-                                                                                    } ?></h3>
+                                        <h3 class="card-title">Senior High Subjects List -<?php if (isset($_POST['stem'])) {
+                                                                                                echo ' STEM';
+                                                                                            } elseif (isset($_POST['abm'])) {
+                                                                                                echo ' ABM';
+                                                                                            } elseif (isset($_POST['gas'])) {
+                                                                                                echo ' GAS';
+                                                                                            } elseif (isset($_POST['humss'])) {
+                                                                                                echo ' HUMSS';
+                                                                                            } elseif (isset($_POST['tvl'])) {
+                                                                                                echo ' TVL-HE';
+                                                                                            } else {
+                                                                                                echo ' STEM';
+                                                                                            } ?></h3>
 
                                     </div>
 
@@ -74,23 +87,23 @@ if (empty($_POST)) {
                                         <form action="list.subjectSH.php" method="POST">
 
                                             <div class="row justify-content-center">
-                                                <button class="btn btn-app bg-gray-light" name="stem">
+                                                <button class="btn btn-app bg-gray-light" value="STEM" name="stem">
                                                     <i class="fas fa-list-alt"></i> STEM
                                                 </button>
 
-                                                <button class="btn btn-app bg-gray-light" name="abm">
+                                                <button class="btn btn-app bg-gray-light" value="ABM" name="abm">
                                                     <i class="fas fa-list-alt"></i> ABM
                                                 </button>
 
-                                                <button class="btn btn-app bg-gray-light" name="gas">
+                                                <button class="btn btn-app bg-gray-light" value="GAS" name="gas">
                                                     <i class="fas fa-list-alt"></i> GAS
                                                 </button>
 
-                                                <button class="btn btn-app bg-gray-light" name="humss">
+                                                <button class="btn btn-app bg-gray-light" value="HUMSS" name="humss">
                                                     <i class="fas fa-list-alt"></i> HUMSS
                                                 </button>
 
-                                                <button class="btn btn-app bg-gray-light" name="tvl">
+                                                <button class="btn btn-app bg-gray-light" value="TVL - HE" name="tvl">
                                                     <i class="fas fa-list-alt"></i> TVL- HE
                                                 </button>
                                             </div>
@@ -146,44 +159,14 @@ if (empty($_POST)) {
                                                     LEFT JOIN tbl_semesters ON tbl_semesters.semester_id = tbl_subjects_senior.semester_id
                                                     LEFT JOIN tbl_strands ON tbl_strands.strand_id = tbl_subjects_senior.strand_id 
                                                     LEFT JOIN tbl_efacadyears ON tbl_efacadyears.efacadyear_id = tbl_subjects_senior.efacadyear_id
-                                                    WHERE tbl_strands.strand_name IN ('STEM') AND tbl_efacadyears.efacadyear IN ('$efacadyear')");
+                                                    WHERE tbl_strands.strand_name IN ('') AND tbl_efacadyears.efacadyear IN ('')");
                                                 } else {
-                                                    if (isset($_POST['stem'])) {
-                                                        $get_subjects = mysqli_query($conn, "SELECT * FROM tbl_subjects_senior
+                                                    $get_subjects = mysqli_query($conn, "SELECT * FROM tbl_subjects_senior
                                                 LEFT JOIN tbl_grade_levels ON tbl_grade_levels.grade_level_id = tbl_subjects_senior.grade_level_id
                                                 LEFT JOIN tbl_semesters ON tbl_semesters.semester_id = tbl_subjects_senior.semester_id
                                                 LEFT JOIN tbl_strands ON tbl_strands.strand_id = tbl_subjects_senior.strand_id
                                                 LEFT JOIN tbl_efacadyears ON tbl_efacadyears.efacadyear_id = tbl_subjects_senior.efacadyear_id
-                                                WHERE tbl_strands.strand_name IN ('STEM') AND tbl_efacadyears.efacadyear IN ('$efacadyear')");
-                                                    } elseif (isset($_POST['abm'])) {
-                                                        $get_subjects = mysqli_query($conn, "SELECT * FROM tbl_subjects_senior
-                                                LEFT JOIN tbl_grade_levels ON tbl_grade_levels.grade_level_id = tbl_subjects_senior.grade_level_id
-                                                LEFT JOIN tbl_semesters ON tbl_semesters.semester_id = tbl_subjects_senior.semester_id
-                                                LEFT JOIN tbl_strands ON tbl_strands.strand_id = tbl_subjects_senior.strand_id
-                                                LEFT JOIN tbl_efacadyears ON tbl_efacadyears.efacadyear_id = tbl_subjects_senior.efacadyear_id 
-                                                WHERE tbl_strands.strand_name IN ('ABM') AND tbl_efacadyears.efacadyear IN ('$efacadyear')");
-                                                    } elseif (isset($_POST['gas'])) {
-                                                        $get_subjects = mysqli_query($conn, "SELECT * FROM tbl_subjects_senior
-                                                LEFT JOIN tbl_grade_levels ON tbl_grade_levels.grade_level_id = tbl_subjects_senior.grade_level_id
-                                                LEFT JOIN tbl_semesters ON tbl_semesters.semester_id = tbl_subjects_senior.semester_id
-                                                LEFT JOIN tbl_strands ON tbl_strands.strand_id = tbl_subjects_senior.strand_id
-                                                LEFT JOIN tbl_efacadyears ON tbl_efacadyears.efacadyear_id = tbl_subjects_senior.efacadyear_id
-                                                 WHERE tbl_strands.strand_name IN ('GAS') AND tbl_efacadyears.efacadyear IN ('$efacadyear')");
-                                                    } elseif (isset($_POST['humss'])) {
-                                                        $get_subjects = mysqli_query($conn, "SELECT * FROM tbl_subjects_senior
-                                                LEFT JOIN tbl_grade_levels ON tbl_grade_levels.grade_level_id = tbl_subjects_senior.grade_level_id
-                                                LEFT JOIN tbl_semesters ON tbl_semesters.semester_id = tbl_subjects_senior.semester_id
-                                                LEFT JOIN tbl_strands ON tbl_strands.strand_id = tbl_subjects_senior.strand_id
-                                                LEFT JOIN tbl_efacadyears ON tbl_efacadyears.efacadyear_id = tbl_subjects_senior.efacadyear_id
-                                                 WHERE tbl_strands.strand_name IN ('HUMSS') AND tbl_efacadyears.efacadyear IN ('$efacadyear')");
-                                                    } elseif (isset($_POST['tvl'])) {
-                                                        $get_subjects = mysqli_query($conn, "SELECT * FROM tbl_subjects_senior
-                                                LEFT JOIN tbl_grade_levels ON tbl_grade_levels.grade_level_id = tbl_subjects_senior.grade_level_id
-                                                LEFT JOIN tbl_semesters ON tbl_semesters.semester_id = tbl_subjects_senior.semester_id
-                                                LEFT JOIN tbl_strands ON tbl_strands.strand_id = tbl_subjects_senior.strand_id 
-                                                LEFT JOIN tbl_efacadyears ON tbl_efacadyears.efacadyear_id = tbl_subjects_senior.efacadyear_id
-                                                WHERE tbl_strands.strand_name IN ('TVL - HE') AND tbl_efacadyears.efacadyear IN ('$efacadyear')");
-                                                    }
+                                                WHERE tbl_strands.strand_name IN ('$str_name') AND tbl_efacadyears.efacadyear IN ('$efacadyear')");
                                                 }
                                                 ?>
 
@@ -304,6 +287,11 @@ if (empty($_POST)) {
                     "info": true,
                     "autoWidth": false,
                     "responsive": true,
+                    "language": {
+                        "emptyTable": "No data available in table",
+                    }
+
+
                 });
             });
             </script>

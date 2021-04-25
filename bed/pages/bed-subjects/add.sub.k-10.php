@@ -80,8 +80,9 @@ require '../../includes/bed-session.php';
                                                 <span class="input-group-text text-sm"><b>Grade Level</b></span>
                                             </div>
                                             <select class="form-control select2 select2-info custom-select"
-                                                data-dropdown-css-class="select2-info" name="grade_level">
-                                                <option disabled selected>Select Grade Level</option>
+                                                data-dropdown-css-class="select2-info"
+                                                data-placeholder="Select Grade Level" name="grade_level">
+                                                <option value="" disabled selected>Select Grade Level</option>
                                                 <?php
                                                 $query = mysqli_query($conn, "SELECT * from tbl_grade_levels LIMIT 13");
                                                 while ($row2 = mysqli_fetch_array($query)) {

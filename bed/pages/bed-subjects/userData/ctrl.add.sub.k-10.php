@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
     $result = mysqli_num_rows($check_double);
 
     if ($result == 0) {
-        $insertUser = mysqli_query($conn, "INSERT INTO tbl_subjects (subject_code, subject_description, grade_level_id) VALUES ('$subject_code', '$subject_description', '$grade_level')") or die(mysqli_error($conn));
+        $insertSub = mysqli_query($conn, "INSERT INTO tbl_subjects (subject_code, subject_description, grade_level_id) VALUES ('$subject_code', '$subject_description', '$grade_level')") or die(mysqli_error($conn));
         $_SESSION['success'] = true;
         header('location: ../add.sub.k-10.php');
     } else {

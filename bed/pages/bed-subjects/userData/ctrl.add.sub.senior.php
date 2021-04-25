@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
 
 
     if ($result == 0) {
-        $insertUser = mysqli_query($conn, "INSERT INTO tbl_subjects_senior (subject_code, subject_description, units, pre_requisites, semester_id, grade_level_id, strand_id, efacadyear_id) VALUES ('$subject_code', '$subject_description', '$units', '$prerequisites', '$semester', '$grade_level', '$strand_name', '$eay')") or die(mysqli_error($conn));
+        $insertSub = mysqli_query($conn, "INSERT INTO tbl_subjects_senior (subject_code, subject_description, units, pre_requisites, semester_id, grade_level_id, strand_id, efacadyear_id) VALUES ('$subject_code', '$subject_description', '$units', '$prerequisites', '$semester', '$grade_level', '$strand_name', '$eay')") or die(mysqli_error($conn));
         $_SESSION['success'] = true;
         header('location: ../add.sub.senior.php');
     } else {
