@@ -484,7 +484,23 @@
                             </a>
                         </li>
                     </ul>
-                </li>';
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-file-medical"></i>
+                        <p>
+                            Data Entry
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="../bed-student/add.student.php" class="nav-link">
+                                <i class="fa fa-user-plus nav-icon"></i>
+                                <p> Add Student</p>
+                            </a>
+                        </li>
+                        </ul>';
                 } elseif ($_SESSION['role'] == "Student") {
                     echo '<li class="nav-item menu-open">
                     <a href="../bed-dashboard/index.php" id="loadfile" class="nav-link active">
