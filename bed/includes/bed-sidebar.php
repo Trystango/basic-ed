@@ -416,6 +416,38 @@
                             Dashboard
                         </p>
                     </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../bed-master_key/list.adviser.php" class="nav-link">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>
+                            Advisers List
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../bed-master_key/list.teacher.php" class="nav-link">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>
+                            Teachers List
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-header">ADD NEW USER</li>
+                    <a href="../bed-master_key/add.adviser.php" class="nav-link">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            Add Adviser
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../bed-master_key/add.teacher.php" class="nav-link">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            Add Teacher
+                        </p>
+                    </a>
                 </li>';
                 } elseif ($_SESSION['role'] == "Admission") {
                     echo '<li class="nav-item menu-open">
